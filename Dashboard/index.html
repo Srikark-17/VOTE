@@ -33,6 +33,17 @@
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
 
+    <!-- Searchbox JavaScript -->
+    <script>
+        function initAutocomplete() {
+            const input = document.getElementById("pac-input");
+            const searchBox = new google.maps.places.SearchBox(input);
+        }
+    </script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyQHeTSGuhn_DPNZMnukVeJfC1F0qb1rk&callback=initAutocomplete&libraries=places&v=weekly"
+      defer
+    ></script>
 </head>
 
 <body class="animsition">
@@ -270,7 +281,7 @@
                     <div class="container-fluid">
                         <div class="header-wrap">
                             <form class="form-header" action="" method="POST">
-                                <input class="au-input au-input--xl" type="text" name="search" placeholder="Search for datas &amp; reports..." />
+                                <input id="pac-input" class="au-input au-input--xl controls" type="text" name="search" placeholder="Search for Polling locations" />
                                 <button class="au-btn--submit" type="submit">
                                     <i class="zmdi zmdi-search"></i>
                                 </button>
