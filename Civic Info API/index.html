@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+    <link rel="stylesheet" href="style.css">
+  <head>
+    <script src="scripts.js"></script>
+  </head>
+  <body>
+      Address
+      <br />
+      <input
+      id="pac-input"
+      class="controls"
+      type="text"
+      placeholder="123 JavaScript Road, Los Angeles, California"
+    />
+    <div>
+        <ul id="pollingUL">
+            <!-- Polling places are shown here -->
+        </ul>
+    </div>
+    <div>
+        <ul id="repUL">
+            <!-- reps are shown here -->
+        </ul>
+    </div>
+    <button onclick="getPollingInfo()">Get Polling Locations</button>
+    <button onclick="getRepInfo()">Get Reps</button>
+  </body>
+  <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyQHeTSGuhn_DPNZMnukVeJfC1F0qb1rk&callback=initAutocomplete&libraries=places&v=weekly"
+      defer
+    ></script>
+    <script>
+      function initAutocomplete() {
+        const input = document.getElementById("pac-input");
+        const searchBox = new google.maps.places.SearchBox(input);
+    }
+    </script>
+</html>
