@@ -20,6 +20,11 @@ getRepData = () => {
 }
 
  showPollingPlaceData = (response) => {
+    $('#location1').html('');
+    $('#location2').html('');
+    $('#location3').html('');
+    $('#location4').html('');
+    $('#location5').html('');
     for (let i = 0; i < 1; i++) {
         // Location Name
         let th = document.createElement('th');
