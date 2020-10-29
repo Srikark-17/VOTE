@@ -98,6 +98,12 @@ getRepData = () => {
  } 
 
  showRepData = (res) => {
+    $('#president').html('');
+    $('#vice-president').html('');
+    $('#senator-1').html('');
+    $('#senator-2').html('');
+    $('#representative').html('');
+    $('#governor').html('');
     for (let i = 0; i < 1; i++) {
         // Name of the President
         let nametd = document.createElement('th');
