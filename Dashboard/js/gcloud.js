@@ -19,15 +19,22 @@ getRepData = () => {
     })
 }
   
+// -- ${response.earlyVoteSites[i].address.line1}, ${response.earlyVoteSites[i].address.city}, ${response.earlyVoteSites[i].address.state}, ${response.earlyVoteSites[i].address.zip}
+
  showPollingPlaceData = (response) => {
     for (let i = 0; i < response.earlyVoteSites.length; i++) {
-        let li = document.createElement('li');
-        let t = document.createTextNode(`${response.earlyVoteSites[i].address.locationName} -- ${response.earlyVoteSites[i].address.line1}, ${response.earlyVoteSites[i].address.city}, ${response.earlyVoteSites[i].address.state}, ${response.earlyVoteSites[i].address.zip}`)
-        li.appendChild(t);
-        document.getElementById("pollingUL").appendChild(li);
+        let th = document.createElement('th');
+        let td = document.createElement('td');
+
+        let thText = document.createTextNode(`${response.earlyVoteSites[i].address.locationName}`)
+        let tdText = document.createTextNode(`${response.earlyVoteSites[i].address.line1}, ${response.earlyVoteSites[i].address.city}, ${response.earlyVoteSites[i].address.state}, ${response.earlyVoteSites[i].address.zip}`)
+        
+        th.appendChild(thText);
+        td.appendChild(tdText)
+
+        document.getElementById("locationName").appendChild(th);
+        document.getElementById("address").appendChild(td);
     }
-    let br = document.createElement('br');
-    document.getElementById("pollingUL").appendChild(br);
  } 
 
  showRepData = (res) => {

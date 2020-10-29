@@ -98,81 +98,6 @@
                                 </li>
                             </ul>
                         </li>
-                        <li>
-                            <a href="chart.html">
-                                <i class="fas fa-chart-bar"></i>Charts</a>
-                        </li>
-                        <li>
-                            <a href="table.html">
-                                <i class="fas fa-table"></i>Tables</a>
-                        </li>
-                        <li>
-                            <a href="form.html">
-                                <i class="far fa-check-square"></i>Forms</a>
-                        </li>
-                        <li>
-                            <a href="pollingloc.html">
-                                <i class="fas fa-map-marker-alt"></i>Polling Locations</a>
-                        </li>
-                        <li>
-                            <a href="map.html">
-                                <i class="fas fa-map-marker-alt"></i>Maps</a>
-                        </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-copy"></i>Pages</a>
-                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                                <li>
-                                    <a href="login.html">Login</a>
-                                </li>
-                                <li>
-                                    <a href="register.html">Register</a>
-                                </li>
-                                <li>
-                                    <a href="forget-pass.html">Forget Password</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-desktop"></i>UI Elements</a>
-                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                                <li>
-                                    <a href="button.html">Button</a>
-                                </li>
-                                <li>
-                                    <a href="badge.html">Badges</a>
-                                </li>
-                                <li>
-                                    <a href="tab.html">Tabs</a>
-                                </li>
-                                <li>
-                                    <a href="card.html">Cards</a>
-                                </li>
-                                <li>
-                                    <a href="alert.html">Alerts</a>
-                                </li>
-                                <li>
-                                    <a href="progress-bar.html">Progress Bars</a>
-                                </li>
-                                <li>
-                                    <a href="modal.html">Modals</a>
-                                </li>
-                                <li>
-                                    <a href="switch.html">Switchs</a>
-                                </li>
-                                <li>
-                                    <a href="grid.html">Grids</a>
-                                </li>
-                                <li>
-                                    <a href="fontawesome.html">Fontawesome Icon</a>
-                                </li>
-                                <li>
-                                    <a href="typo.html">Typography</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
                 </div>
             </nav>
         </header>
@@ -232,12 +157,6 @@
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
                         <div class="header-wrap">
-                            <form class="form-header">
-                                <input id="pac-input" class="au-input au-input--xl" type="text" name="search" placeholder="Type your address" />
-                            </form>
-                            <button onclick="getRepInfo()" style="background-color: #4173d7; width: 45px; height: 45px; border-radius: 5px;" type="submit">
-                                <i class="zmdi zmdi-search"></i>
-                            </button>
                             <div class="header-button">
                                 <div class="noti-wrap">
                                     <div class="noti__item js-item-menu">
@@ -399,47 +318,72 @@
                     </div>
                 </div>
             </header>
+                <input id="pac-input" class="au-input au-input--xl" style="margin-top: 100px; margin-left: 25px;" type="text" name="search" placeholder="Type your address" />
+            <button onclick="getPollingInfo()" style="background-color: #4173d7; width: 45px; height: 45px; border-radius: 5px;" type="submit">
+                <i class="zmdi zmdi-search"></i>
+            </button>
             <div class="main-content">
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
                         <div class="row">
-                            <span style="padding-left: 15px; font-size: 30px;">Elected Representatives</span>
+                            <span style="padding-left: 15px; font-size: 30px;">Polling Locations</span>
                             <div class="col-lg-12">
-                                    <table class="table table-striped">
-                                        <thead>
-                                          <tr style="background-color: #4173d7;">
-                                            <th scope="col" style="color: white;">Name</th>
-                                            <th scope="col" style="color: white;">Position</th>
-                                            <th scope="col" style="color: white;">Party</th>
-                                            <th scope="col" style="color: white;">Phone Number</th>
-                                          </tr>
-                                        </thead>
-                                        <tbody>
-                                          <tr id="president">
-                                          </tr>
-
-                                          <tr id="vice-president">
-                                            
-                                          </tr>
-
-                                          <tr id="senator-1">
-                                            
-                                          </tr>
-
-                                          <tr id="senator-2">
-                                            
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr style="background-color: #4173d7;">
+                                        <th scope="col" style="color: white;">Location Name</th>
+                                        <th scope="col" style="color: white;">Address</th>
                                         </tr>
-                                        <tr id="representative">
-                                            
+                                    </thead>
+                                    <tbody>
+                                        <tr id="locationName">
                                         </tr>
-                                        <tr id="governor">
-                                            
+
+                                        <tr id="address">
                                         </tr>
-                                        </tbody>
-                                      </table>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <span style="padding-left: 15px; font-size: 30px; margin-left: 15px; margin-top: 20px;">Elected Representatives</span>
+                        <div class="col-lg-12">
+                            <table class="table table-striped" style="margin-left: 15px;">
+                                <thead>
+                                    <tr style="background-color: #4173d7;">
+                                    <th scope="col" style="color: white;">Name</th>
+                                    <th scope="col" style="color: white;">Position</th>
+                                    <th scope="col" style="color: white;">Party</th>
+                                    <th scope="col" style="color: white;">Phone Number</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr id="president">
+                                    </tr>
+
+                                    <tr id="vice-president">
+                                    
+                                    </tr>
+
+                                    <tr id="senator-1">
+                                    
+                                    </tr>
+
+                                    <tr id="senator-2">
+                                    
+                                    </tr>
+                                    <tr id="representative">
+                                        
+                                    </tr>
+                                    <tr id="governor">
+                                        
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
                 </div>
             </div>
         </div>
@@ -466,14 +410,9 @@
     <script src="vendor/chartjs/Chart.bundle.min.js"></script>
     <script src="vendor/select2/select2.min.js"></script>
 
-    <!-- full calendar requires moment along jquery which is included above -->
-    <script src="vendor/fullcalendar-3.10.0/lib/moment.min.js"></script>
-    <script src="vendor/fullcalendar-3.10.0/fullcalendar.js"></script>
-
     <!-- Main JS-->
     <script src="js/main.js"></script>
 
 </body>
 
 </html>
-<!-- end document-->
