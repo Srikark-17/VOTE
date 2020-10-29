@@ -10,7 +10,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Calendar</title>
+    <title>Polling Locations</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -46,6 +46,17 @@
     }
     </style>
 
+    <!-- JavaScript -->
+    <script>
+        function initAutocomplete() {
+            const input = document.getElementById("pac-input");
+            const searchBox = new google.maps.places.SearchBox(input);
+        }
+    </script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyQHeTSGuhn_DPNZMnukVeJfC1F0qb1rk&callback=initAutocomplete&libraries=places&v=weekly"
+      defer
+    ></script>
 </head>
 
 <!-- animsition overrides all click events on clickable things like a,
@@ -104,8 +115,8 @@
                                 <i class="far fa-check-square"></i>Forms</a>
                         </li>
                         <li>
-                            <a href="calendar.html">
-                                <i class="fas fa-calendar-alt"></i>Calendar</a>
+                            <a href="pollingloc.html">
+                                <i class="fas fa-map-marker-alt"></i>Polling Locations</a>
                         </li>
                         <li>
                             <a href="map.html">
@@ -212,8 +223,8 @@
                                 <i class="far fa-check-square"></i>Forms</a>
                         </li>
                         <li class="active">
-                            <a href="calendar.html">
-                                <i class="fas fa-calendar-alt"></i>Calendar</a>
+                            <a href="pollingloc.html">
+                                <i class="fas fa-map-marker-alt"></i>Polling Locations</a>
                         </li>
                         <li>
                             <a href="map.html">
@@ -287,7 +298,7 @@
                     <div class="container-fluid">
                         <div class="header-wrap">
                             <form class="form-header" action="" method="POST">
-                                <input class="au-input au-input--xl" type="text" name="search" placeholder="Search for datas &amp; reports..." />
+                                <input id="pac-input" class="au-input au-input--xl" type="text" name="search" placeholder="Type your address" />
                                 <button class="au-btn--submit" type="submit">
                                     <i class="zmdi zmdi-search"></i>
                                 </button>
@@ -357,7 +368,7 @@
                                                 </div>
                                                 <div class="content">
                                                     <p>Meeting about new dashboard...</p>
-                                                    <span>Cynthia Harvey, April 12,,2018</span>
+                                                    <span>Cynthia Harvey, April 12,2018</span>
                                                 </div>
                                             </div>
                                             <div class="email__footer">
@@ -460,11 +471,70 @@
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col">
-                              <div class="au-card">
-                                <div id="calendar"></div>
-                              </div>
-                            </div><!-- .col -->
+                            <div class="col-lg-9">
+                                <div class="table-responsive table--no-card m-b-30">
+                                    <table class="table table-borderless table-striped table-earning">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Position</th>
+                                                <th>Party</th>
+                                                <th class="text-right">Phone number</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Donald J. Trump</td>
+                                                <td>President</td>
+                                                <td>Republican</td>
+                                                <td>1234567890</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2018-09-28 01:22</td>
+                                                <td>100397</td>
+                                                <td>Samsung S8 Black</td>
+                                                <td class="text-right">$756.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2018-09-27 02:12</td>
+                                                <td>100396</td>
+                                                <td>Game Console Controller</td>
+                                                <td class="text-right">$22.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2018-09-26 23:06</td>
+                                                <td>100395</td>
+                                                <td>iPhone X 256Gb Black</td>
+                                                <td class="text-right">$1199.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2018-09-25 19:03</td>
+                                                <td>100393</td>
+                                                <td>USB 3.0 Cable</td>
+                                                <td class="text-right">$10.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2018-09-29 05:57</td>
+                                                <td>100392</td>
+                                                <td>Smartwatch 4.0 LTE Wifi</td>
+                                                <td class="text-right">$199.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2018-09-24 19:10</td>
+                                                <td>100391</td>
+                                                <td>Camera C430W 4k</td>
+                                                <td class="text-right">$699.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2018-09-22 00:43</td>
+                                                <td>100393</td>
+                                                <td>USB 3.0 Cable</td>
+                                                <td class="text-right">$10.00</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12">
