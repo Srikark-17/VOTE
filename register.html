@@ -33,6 +33,32 @@
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
 
+    <script src="js/register.js"></script>
+    <script> tdna = new TypingDNA(); /** creates an instance of the TypingDNA typing pattern recording class */
+        tdna.startDiagram(); /** starts the recording of a new typing pattern, will call tdna.reset() to reset later *
+         document.getElementById('username').focus();
+
+         /*****************************************************
+         * called after submitting a username; if username
+         * is ok it redirects to the verify page
+         *****************************************************/
+        function validateUser(form) {
+            if(!form) {
+                return false;
+            }
+            var username = document.getElementById("username");
+            if(username && username.value.length > 5) {
+                swapContent('step_username', 'step_loading');
+                var user = form.username.value.toString().trim();
+                var pass = form.password.value.toString().trim();
+                form.textid.value = TypingDNA.getTextId(user + pass);
+                form.diagram.value = tdna.getDiagram(user + pass);
+                return true;
+            } else {
+                alert('Your username/id should be at least 6 characters in length');
+                return false;
+            }
+        }</script>
 </head>
 
 <body class="animsition">
@@ -43,18 +69,22 @@
                     <div class="login-content">
                         <div class="login-logo">
                             <a href="#">
-                                <img src="images/icon/logo.png" alt="CoolAdmin">
+                                <img src="images/logo.png" alt="CoolAdmin">
                             </a>
                         </div>
                         <div class="login-form">
                             <form action="" method="post">
                                 <div class="form-group">
-                                    <label>Username</label>
+                                    <label>First Name</label>
+                                    <input class="au-input au-input--full" type="text" name="username" placeholder="Username">
+                                </div>
+                                <div class="form-group">
+                                    <label>Last Name</label>
                                     <input class="au-input au-input--full" type="text" name="username" placeholder="Username">
                                 </div>
                                 <div class="form-group">
                                     <label>Email Address</label>
-                                    <input class="au-input au-input--full" type="email" name="email" placeholder="Email">
+                                    <input class="au-input au-input--full" autocomplete="off", type="text", name="username", placeholder="", value='', oncopy="return false", onpaste="return false">
                                 </div>
                                 <div class="form-group">
                                     <label>Password</label>
@@ -65,18 +95,12 @@
                                         <input type="checkbox" name="aggree">Agree the terms and policy
                                     </label>
                                 </div>
-                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">register</button>
-                                <div class="social-login-content">
-                                    <div class="social-button">
-                                        <button class="au-btn au-btn--block au-btn--blue m-b-20">register with facebook</button>
-                                        <button class="au-btn au-btn--block au-btn--blue2">register with twitter</button>
-                                    </div>
-                                </div>
+                                <button class="au-btn au-btn--block au-btn--blue m-b-20" type="submit">register</button>
                             </form>
                             <div class="register-link">
                                 <p>
                                     Already have account?
-                                    <a href="#">Sign In</a>
+                                    <a href="login.html">Sign In</a>
                                 </p>
                             </div>
                         </div>
