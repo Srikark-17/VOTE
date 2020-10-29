@@ -1,40 +1,4 @@
-/*------------------------------------------------------------------
-    Version: 1.0
--------------------------------------------------------------------*/
-
-
-/*------------------------------------------------------------------
-    [Table of contents]
-
-    1. IMPORT FONTS
-    2. IMPORT FILES
-    3. SKELETON
-    4. WP CORE
-    5. HEADER
-    6. SECTIONS
-    7. SECTIONS
-    8. PORTFOLIO
-    9. TESTIMONIALS
-    10. PRICING TABLES
-    11. ICON BOXES
-    12. MESSAGE BOXES
-    13. FEATURES
-    14. CONTACT
-    15. FOOTER
-    16. MISC
-    17. BUTTONS
--------------------------------------------------------------------*/
-
-
-/*------------------------------------------------------------------
-    IMPORT FONTS
--------------------------------------------------------------------*/
-
 @import url('https://fonts.googleapis.com/css?family=Exo:200,300,400,500,600,700');
-
-/*------------------------------------------------------------------
-    IMPORT FILES
--------------------------------------------------------------------*/
 
 @import url(css/animate.css);
 @import url(css/camera.css);
@@ -43,9 +7,6 @@
 @import url(css/owl.carousel.css);
 @import url(css/font-awesome.min.css);
 
-/*------------------------------------------------------------------
-    SKELETON
--------------------------------------------------------------------*/
 
 body {
     color: #999;
@@ -286,9 +247,6 @@ a img.aligncenter {
     padding: 0 4px 5px;
 }
 
-
-/* Text meant only for screen readers. */
-
 .screen-reader-text {
     clip: rect(1px, 1px, 1px, 1px);
     position: absolute !important;
@@ -315,13 +273,7 @@ a img.aligncenter {
     top: 5px;
     width: auto;
     z-index: 100000;
-    /* Above WP toolbar. */
 }
-
-
-/*------------------------------------------------------------------
-    HEADER
--------------------------------------------------------------------*/
 
 .megamenu .nav,
 .megamenu .collapse,
@@ -415,11 +367,6 @@ a img.aligncenter {
 	color: #f44336;
 }
 
-.header_style_01 .navbar-default .navbar-nav > li:hover a,
-.header_style_01 .navbar-default .navbar-nav > li:focus a {
-    
-}
-
 .header_style_01 .navbar-right > li {
     margin-top: 2px;
     -webkit-transition: all .3s ease-in-out;
@@ -500,9 +447,6 @@ li.social-links a {
 	border-radius: 0;
 }
 
-/*------------------------------------------------------------------
-    SECTIONS
--------------------------------------------------------------------*/
 
 .camera_wrap {
     float: none;
@@ -722,10 +666,6 @@ li.social-links a {
 }
 
 
-/*------------------------------------------------------------------
-    PORTFOLIO
--------------------------------------------------------------------*/
-
 .item-h2,
 .item-h1 {
     height: 100% !important;
@@ -744,7 +684,6 @@ li.social-links a {
 
 .isotope,
 .isotope .isotope-item {
-    /* change duration value to whatever you like */
     -webkit-transition-duration: 0.8s;
     -moz-transition-duration: 0.8s;
     transition-duration: 0.8s;
@@ -854,10 +793,6 @@ li.social-links a {
 }
 
 
-/*------------------------------------------------------------------
-    TESTIMONIALS
--------------------------------------------------------------------*/
-
 .logos img {
     margin: auto;
     display: block;
@@ -931,11 +866,6 @@ li.social-links a {
 .testimonial p:after {
     display: none;
 }
-
-
-/*------------------------------------------------------------------
-    PRICING TABLES
--------------------------------------------------------------------*/
 
 .pricing-table {
     margin: 50px 0 0 0;
@@ -1048,11 +978,6 @@ li.social-links a {
     text-align: center;
     background-color: #f4f4f4;
 }
-
-
-/*------------------------------------------------------------------
-    ICON BOXES
--------------------------------------------------------------------*/
 
 .icon-wrapper {
     position: relative;
@@ -1188,11 +1113,6 @@ li.social-links a {
     transform: scale(1);
     opacity: 1;
 }
-
-
-/*------------------------------------------------------------------
-    MESSAGE BOXES
--------------------------------------------------------------------*/
 
 .event_dit{
 	margin-top: 20px;
@@ -1475,9 +1395,6 @@ hr.invis1 {
     z-index: 1;
 }
 
-
-/* Divider Styles */
-
 .divider-wrapper {
     width: 100%;
     box-shadow: 0 5px 14px rgba(0, 0, 0, 0.1);
@@ -1662,10 +1579,6 @@ hr.invis1 {
 }
 
 
-/*------------------------------------------------------------------
-    FEATURES
--------------------------------------------------------------------*/
-
 .customwidget h1 {
     font-size: 44px;
     color: #ffffff;
@@ -1816,13 +1729,8 @@ hr.invis1 {
 }
 
 
-/*------------------------------------------------------------------
-    CONTACT
--------------------------------------------------------------------*/
-
 .bootstrap-select {
     width: 100% \0;
-    /*IE9 and below*/
 }
 
 .bootstrap-select > .dropdown-toggle {
@@ -2193,11 +2101,6 @@ select.mobile-device {
     background: url(images/bg.png) no-repeat center center #fff;
 }
 
-
-/*------------------------------------------------------------------
-    FOOTER
--------------------------------------------------------------------*/
-
 .cac {
     background-color: #232323;
     -webkit-transition: all .3s ease-in-out;
@@ -2335,14 +2238,12 @@ select.mobile-device {
 }
 
 
-/* Footer right */
 
 .footer-distributed .footer-right {
     float: right;
 }
 
 
-/* The search form */
 
 .footer-distributed form {
     position: relative;
@@ -2366,8 +2267,6 @@ select.mobile-device {
     outline: none;
 }
 
-
-/* Changing the placeholder color */
 
 .footer-distributed form input::-webkit-input-placeholder {
     color: #999;
@@ -2403,10 +2302,6 @@ select.mobile-device {
 .footer-distributed .footer-company-name a:hover{
 	color: #f44336;
 }
-
-/*------------------------------------------------------------------
-    MISC
--------------------------------------------------------------------*/
 
 .dmtop.show {
     bottom: 50px;
@@ -2524,10 +2419,6 @@ select.mobile-device {
   75% { border-width: 3px;}
   100% { border-width: 10px;}
 }
-
-/*------------------------------------------------------------------
-    BUTTONS
--------------------------------------------------------------------*/
 
 .navbar-default .btn-light {
     padding: 0 20px;
