@@ -100,5 +100,3 @@ getRepData = () => {
          console.log(error);
      })
     }
-
-//  1783 Macallan Drive, Brentwood, TN, 37027
