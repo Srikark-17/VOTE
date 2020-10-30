@@ -29,36 +29,48 @@
     <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
     <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
     <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
-
+    
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
-
-    <script src="js/register.js"></script>
-    <script> tdna = new TypingDNA(); /** creates an instance of the TypingDNA typing pattern recording class */
-        tdna.startDiagram(); /** starts the recording of a new typing pattern, will call tdna.reset() to reset later *
-         document.getElementById('username').focus();
-
-         /*****************************************************
-         * called after submitting a username; if username
-         * is ok it redirects to the verify page
-         *****************************************************/
-        function validateUser(form) {
-            if(!form) {
-                return false;
-            }
-            var username = document.getElementById("username");
-            if(username && username.value.length > 5) {
-                swapContent('step_username', 'step_loading');
-                var user = form.username.value.toString().trim();
-                var pass = form.password.value.toString().trim();
-                form.textid.value = TypingDNA.getTextId(user + pass);
-                form.diagram.value = tdna.getDiagram(user + pass);
-                return true;
-            } else {
-                alert('Your username/id should be at least 6 characters in length');
-                return false;
-            }
-        }</script>
+<!-- 
+    <script src="js/register.js"></script> -->
+    <script src="js/typingdna.js" type='application/javascript'></script>
+    <!-- <script>
+        var tdna  = new TypingDNA();
+        tdna.start()
+//         var typingPattern = tdna.getTypingPattern({type:0, length:160});
+// //sametext pattern
+//         var typingPattern = tdna.getTypingPattern({type:1, text:"Hello5g21?*"});
+// //extended pattern
+//         var typingPattern = tdna.getTypingPattern({type:2, text:"example@mail.com"});
+//         console.log(typingPattern)
+//         console.log(typingPattern1)
+//         console.log(typingPattern2)
+    </script> -->
+    <!-- <script>
+        $(document).ready(function(){
+        
+        var tdna = new TypingDNA();
+        //anytext pattern
+        var typingPattern = tdna.getTypingPattern({type:0, length:160});
+        //sametext pattern
+        var typingPattern1 = tdna.getTypingPattern({type:1, text:"Hello5g21?*"});
+        //extended pattern
+        var typingPattern2 = tdna.getTypingPattern({type:2, text:"example@mail.com"});
+        console.log(typingPattern)
+        console.log(typingPattern1)
+        console.log(typingPattern2)
+        //   $('.submit_btn').click(function(){
+        // var tdna = new TypingDNA();
+        // var dna_post = $('#mydna').val();
+        // //alert(dna_post);
+        // var typingPattern2 = tdna.getTypingPattern({type:2, text:dna_post});
+        // alert(typingPattern2);
+        // // Post typingPattern2 data via an ajax call to be processed by Restful API
+            
+        //   });
+        });
+        </script> -->
 </head>
 
 <body class="animsition">
@@ -73,29 +85,29 @@
                             </a>
                         </div>
                         <div class="login-form">
-                            <form action="" method="post">
+                            <form method='post' onsubmit=' return TestingTypingPattern'>
                                 <div class="form-group">
                                     <label>First Name</label>
-                                    <input class="au-input au-input--full" type="text" name="username" placeholder="Username">
+                                    <input class="au-input au-input--full" type="text" name="" placeholder="First Name">
                                 </div>
                                 <div class="form-group">
                                     <label>Last Name</label>
-                                    <input class="au-input au-input--full" type="text" name="username" placeholder="Username">
+                                    <input class="au-input au-input--full" type="text" name="" placeholder="Last Name">
                                 </div>
                                 <div class="form-group">
                                     <label>Email Address</label>
-                                    <input class="au-input au-input--full" autocomplete="off", type="text", name="username", placeholder="", value='', oncopy="return false", onpaste="return false">
+                                    <input class="au-input au-input--full" autocomplete="off", type="text", id="username" name="username", placeholder="Username", value='', oncopy="return false", onpaste="return false">
                                 </div>
                                 <div class="form-group">
                                     <label>Password</label>
-                                    <input class="au-input au-input--full" type="password" name="password" placeholder="Password">
+                                    <input class="au-input au-input--full" autocomplete="off", type="password", name="password", placeholder="Password", value='', oncopy="return false", onpaste="return false">
                                 </div>
                                 <div class="login-checkbox">
                                     <label>
                                         <input type="checkbox" name="aggree">Agree the terms and policy
                                     </label>
                                 </div>
-                                <button class="au-btn au-btn--block au-btn--blue m-b-20" type="submit">register</button>
+                                <button class="au-btn au-btn--block au-btn--blue m-b-20" role="button" id="btn_next" type="submit"  >register</button>
                             </form>
                             <div class="register-link">
                                 <p>
@@ -131,7 +143,87 @@
     <script src="vendor/chartjs/Chart.bundle.min.js"></script>
     <script src="vendor/select2/select2.min.js">
     </script>
+     <script>
+        
+         var tdna  = new TypingDNA();
+         function TestingTypingPattern (){
+            let username = document.getElementById("username").value;
+         let password = document.getElementById("password").value;
+         tdna.stop()
+         var typingPattern = tdna.getTypingPattern({type:1, text:"Hello5g21?*"});
+         var https = XMLHttpRequest()
+var querystring = require('querystring');
 
+
+var base_url = 'https://api.typingdna.com/save/:id';
+var apiKey = '{079ecadfe08241731f9777dfc3033267}';
+var apiSecret = '{0f251ae38b0d26e133757fd82b80e27e}';
+var id = username;
+var data = {
+   tp : TypingDNA.getTypingPattern(username),
+}
+
+var options = {
+   hostname : base_url,
+   port : 443,
+   path : '/save/' + id,
+   method : 'POST',
+   headers: {
+       'Content-Type': 'application/x-www-form-urlencoded',
+       'Cache-Control': 'no-cache',
+       'Authorization': 'Basic ' + new Buffer(apiKey + ':' + apiSecret).toString('base64'),
+   },
+};
+
+var responseData = '';
+var req = https.request(options, function(res) {
+   res.on('data', function(chunk) {
+       responseData += chunk;
+   });
+
+   res.on('end', function() {
+       console.log(JSON.parse(responseData));
+   });
+});
+
+req.on('error', function(e) {
+   console.error(e);
+});
+// req.write(
+//    querystring.stringify(data)
+// );
+req.end();
+         }
+     </script>
+    <!-- <script> tdna = new TypingDNA(); /** creates an instance of the TypingDNA typing pattern recording class */
+        tdna.startDiagram(); /** starts the recording of a new typing pattern, will call tdna.reset() to reset later *
+         document.getElementById('username').focus();
+
+         /*****************************************************
+         * called after submitting a username; if username
+         * is ok it redirects to the verify page
+         *****************************************************/
+        function validateUser(form) {
+            if(!form) {
+                return false;
+            }
+            var username = document.getElementById("username");
+            if(username && username.value.length > 5) {
+                swapContent('step_username', 'step_loading');
+                var user = form.username.value.toString().trim();
+                var pass = form.password.value.toString().trim();
+                form.textid.value = TypingDNA.getTextId(user + pass);
+                form.diagram.value = tdna.getDiagram(user + pass);
+                console.log(form.textid.value)
+                console.log(form.diagram.value)
+                console.log(user)
+                console.log(pass)
+                return true;
+            } else {
+                alert('Your username/id should be at least 6 characters in length');
+                return false;
+            }
+        }</script> -->
     <!-- Main JS-->
     <script src="js/main.js"></script>
 
