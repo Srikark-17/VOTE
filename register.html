@@ -128,7 +128,7 @@
                                         <input type="checkbox" name="aggree">Agree the terms and policy
                                     </label>
                                 </div>
-                                <button class="au-btn au-btn--block au-btn--blue m-b-20" role="button" id="btn_next" onclick="SubmitForm() "  action="register.php">register</button>
+                                <button class="au-btn au-btn--block au-btn--blue m-b-20" role="button" id="btn_next" onclick="firebaseSignin() "  action="register.php">register</button>
                             </form>
                             <div class="register-link">
                                 <p>
@@ -196,7 +196,53 @@
         }</script> -->
     <!-- Main JS-->
     <script src="js/main.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
 
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
+ <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="/__/firebase/8.0.0/firebase-app.js"></script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="/__/firebase/8.0.0/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="/__/firebase/8.0.0/firebase-auth.js"></script>
+  <script src="/__/firebase/8.0.0/firebase-firestore.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyDPVMtEigo1LrpDTYQP1pwZVgb4ws5Qq_o",
+    authDomain: "vote-6273c.firebaseapp.com",
+    databaseURL: "https://vote-6273c.firebaseio.com",
+    projectId: "vote-6273c",
+    storageBucket: "vote-6273c.appspot.com",
+    messagingSenderId: "440415472754",
+    appId: "1:440415472754:web:c15e5bf2ad3fefee4946eb",
+    measurementId: "G-TTWW03144Y"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+<script>
+    function firebaseSignin(){
+        let email = document.getElementById("username").value;
+        let password = document.getElementById("password").value;
+        firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // ...
+        });
+    }
+</script>
 </body>
 
 </html>
