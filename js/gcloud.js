@@ -105,6 +105,12 @@ getRepData = () => {
     $('#representative').html('');
     $('#governor').html('');
     for (let i = 0; i < 1; i++) {
+        // Picture of the President
+        let img = new Image();
+        img.src = `${res.officials[0].photoUrl}`
+        img.style.height = "100px"
+        document.getElementById('president').appendChild(img)
+
         // Name of the President
         let nametd = document.createElement('th');
         let nameText = document.createTextNode(`${res.officials[0].name}`)
@@ -131,6 +137,12 @@ getRepData = () => {
     }
 
     for (let i = 1; i < 2; i++) {
+        // Picture of vice-president
+        let img = new Image();
+        img.src = `${res.officials[1].photoUrl}`
+        img.style.height = "100px"
+        document.getElementById('vice-president').appendChild(img)
+
         // Name of the vice-president
         let nametd = document.createElement('th');
         let nameText = document.createTextNode(`${res.officials[1].name}`)
@@ -157,6 +169,12 @@ getRepData = () => {
     }
 
     for (let i = 2; i < 3; i++) {
+        // Picture of senator-1
+        let img = new Image();
+        img.src = `${res.officials[2].photoUrl}`
+        img.style.height = "100px"
+        document.getElementById('senator-1').appendChild(img)
+
         // Name of the senator-1
         let nametd = document.createElement('th');
         let nameText = document.createTextNode(`${res.officials[2].name}`)
@@ -183,6 +201,12 @@ getRepData = () => {
     }
 
     for (let i = 3; i < 4; i++) {
+        // Picture of senator-2
+        let img = new Image();
+        img.src = `${res.officials[3].photoUrl}`
+        img.style.height = "100px"
+        document.getElementById('senator-2').appendChild(img)
+
         // Name of the senator-2
         let nametd = document.createElement('th');
         let nameText = document.createTextNode(`${res.officials[3].name}`)
@@ -209,6 +233,12 @@ getRepData = () => {
     }
 
     for (let i = 4; i < 5; i++) {
+        // Picture of representative
+        let img = new Image();
+        img.src = `${res.officials[4].photoUrl}`
+        img.style.height = "100px"
+        document.getElementById('representative').appendChild(img)
+
         // Name of the representative
         let nametd = document.createElement('th');
         let nameText = document.createTextNode(`${res.officials[4].name}`)
@@ -217,7 +247,7 @@ getRepData = () => {
 
         // Position of the representative
         let positiontd = document.createElement('td');
-        let positionText = document.createTextNode(`${res.offices[4].name}`)
+        let positionText = document.createTextNode(`${res.offices[3].name}`)
         positiontd.appendChild(positionText);
         document.getElementById("representative").appendChild(positiontd);
 
@@ -235,6 +265,12 @@ getRepData = () => {
     }
 
     for (let i = 5; i < 6; i++) {
+        // Picture of the governor
+        let img = new Image();
+        img.src = `${res.officials[5].photoUrl}`
+        img.style.height = "100px"
+        document.getElementById('governor').appendChild(img)
+
         // Name of the governor
         let nametd = document.createElement('th');
         let nameText = document.createTextNode(`${res.officials[5].name}`)
@@ -243,7 +279,7 @@ getRepData = () => {
 
         // Position of the governor
         let positiontd = document.createElement('td');
-        let positionText = document.createTextNode(`${res.offices[5].name}`)
+        let positionText = document.createTextNode(`${res.offices[4].name}`)
         positiontd.appendChild(positionText);
         document.getElementById("governor").appendChild(positiontd);
 
