@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
  
      <!-- Site Metas -->
-    <title>ELPolitic - Responsive HTML5 OnePage Template</title>  
+    <title>VOTE</title>  
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -591,15 +591,15 @@
         <script src="js/jquery.vide.js"></script>
 <script>
     
-function getnews() {
-fetch('http://cors-anywhere.herokuapp.com/http://newsapi.org/v2/top-headlines?country=us&apikey=6206b16744af47a2a6a8269496d50bf0'),{headers: new Headers({"X-Requested-Width":"mgnolia"})})
-.then(a => a.json())
-.then(response =>{ 
-for (var i=0; i<response.articles.length;i++){
-document.getElementById("output").innerHTML += "<div style='padding-top: 20px;'><img style='float:left;width:150px;' src="'+response.articles[i].url.TOImage+"'><h1>"+response.articles[i].title+"</h1>"+response.articles[i].source.name+"<br>"+response.articles[i].description+"<a href="'+response.articles[i].url+"'target='_blank'>"+responses.articles[i].url+"</a>"</div>";
-}
-})
-}
+// function getnews() {
+// fetch('http://cors-anywhere.herokuapp.com/http://newsapi.org/v2/top-headlines?country=us&apikey=6206b16744af47a2a6a8269496d50bf0'),{headers: new Headers({"X-Requested-Width":"mgnolia"})}
+// .then(a => a.json())
+// .then(response =>{ 
+// for (var i=0; i<response.articles.length;i++){
+// document.getElementById("output").innerHTML += "<div style='padding-top: 20px;'><img style='float:left;width:150px;' src="'+response.articles[i].url.TOImage+"'><h1>"+response.articles[i].title+"</h1>"+response.articles[i].source.name+"<br>"+response.articles[i].description+"<a href="'+response.articles[i].url+"'target='_blank'>"+responses.articles[i].url+"</a>"</div>";
+// }
+// })
+// }
 
 </script>
 <button onclick='getnews()'>Get news!</button>
