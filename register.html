@@ -35,6 +35,26 @@
 <!-- 
     <script src="js/register.js"></script> -->
     <script src="js/typingdna.js" type='application/javascript'></script>
+    <script>
+        function createCookie(cookieName,cookieValue)
+        {
+          //var date = new Date();
+          //date.setTime(date.getTime()+(daysToExpire*24*60*60*1000));
+          document.cookie = cookieName + "=" + cookieValue /*+ "; expires=" + date.toGMTString();*/
+        }
+        var tdna = new TypingDNA();
+        function SubmitForm (){
+        var dna_post = document.getElementById("username").value;
+        console.log(dna_post)
+        var typingPattern2 = tdna.getTypingPattern({type:1, text:dna_post})
+        console.log(typingPattern2)
+        $(document).ready(function () {
+            createCookie("Username", dna_post);
+            createCookie("TypingPattern", typingPattern2);
+        });
+    }
+    </script>
+    
     <!-- <script>
         var tdna  = new TypingDNA();
         tdna.start()
@@ -74,6 +94,7 @@
 </head>
 
 <body class="animsition">
+    
     <div class="page-wrapper">
         <div class="page-content--bge5">
             <div class="container">
@@ -85,7 +106,7 @@
                             </a>
                         </div>
                         <div class="login-form">
-                            <form method='post' onsubmit=' return TestingTypingPattern'>
+                            <form>
                                 <div class="form-group">
                                     <label>First Name</label>
                                     <input class="au-input au-input--full" type="text" name="" placeholder="First Name">
@@ -107,7 +128,7 @@
                                         <input type="checkbox" name="aggree">Agree the terms and policy
                                     </label>
                                 </div>
-                                <button class="au-btn au-btn--block au-btn--blue m-b-20" role="button" id="btn_next" type="submit"  >register</button>
+                                <button class="au-btn au-btn--block au-btn--blue m-b-20" role="button" id="btn_next" onclick="SubmitForm() "  action="register.php">register</button>
                             </form>
                             <div class="register-link">
                                 <p>
@@ -120,9 +141,9 @@
                 </div>
             </div>
         </div>
-
+        
     </div>
-
+    
     <!-- Jquery JS-->
     <script src="vendor/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap JS-->
@@ -143,58 +164,7 @@
     <script src="vendor/chartjs/Chart.bundle.min.js"></script>
     <script src="vendor/select2/select2.min.js">
     </script>
-     <script>
-        
-         var tdna  = new TypingDNA();
-         function TestingTypingPattern (){
-            let username = document.getElementById("username").value;
-         let password = document.getElementById("password").value;
-         tdna.stop()
-         var typingPattern = tdna.getTypingPattern({type:1, text:"Hello5g21?*"});
-         var https = XMLHttpRequest()
-var querystring = require('querystring');
-
-
-var base_url = 'https://api.typingdna.com/save/:id';
-var apiKey = '{079ecadfe08241731f9777dfc3033267}';
-var apiSecret = '{0f251ae38b0d26e133757fd82b80e27e}';
-var id = username;
-var data = {
-   tp : TypingDNA.getTypingPattern(username),
-}
-
-var options = {
-   hostname : base_url,
-   port : 443,
-   path : '/save/' + id,
-   method : 'POST',
-   headers: {
-       'Content-Type': 'application/x-www-form-urlencoded',
-       'Cache-Control': 'no-cache',
-       'Authorization': 'Basic ' + new Buffer(apiKey + ':' + apiSecret).toString('base64'),
-   },
-};
-
-var responseData = '';
-var req = https.request(options, function(res) {
-   res.on('data', function(chunk) {
-       responseData += chunk;
-   });
-
-   res.on('end', function() {
-       console.log(JSON.parse(responseData));
-   });
-});
-
-req.on('error', function(e) {
-   console.error(e);
-});
-// req.write(
-//    querystring.stringify(data)
-// );
-req.end();
-         }
-     </script>
+     
     <!-- <script> tdna = new TypingDNA(); /** creates an instance of the TypingDNA typing pattern recording class */
         tdna.startDiagram(); /** starts the recording of a new typing pattern, will call tdna.reset() to reset later *
          document.getElementById('username').focus();
