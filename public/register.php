@@ -1,11 +1,13 @@
 <?php
-$base_url = 'https://api.typingdna.com/save/:id';
-$apiKey= '{079ecadfe08241731f9777dfc3033267}';
-$apiSecret ='{0f251ae38b0d26e133757fd82b80e27e}';
 $id = $_COOKIE["Username"];
 $tp = $_COOKIE["TypingPattern"];
-echo 'console.log($id)';
-echo 'console.log($tp)';
+$base_url = 'https://api.typingdna.com/save/' + $id;
+$apiKey= '{079ecadfe08241731f9777dfc3033267}';
+$apiSecret ='{0f251ae38b0d26e133757fd82b80e27e}';
+echo '<script>';
+    echo 'console.log($id)';
+    echo 'console.log($tp)';
+echo '</script>';
 $ch = curl_init(sprintf($base_url, 'save', $id));
 $data = array('tp' => $tp);
 curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/x-www-form-urlencoded'));

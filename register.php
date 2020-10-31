@@ -1,5 +1,5 @@
 <?php
-$base_url = 'https://api.typingdna.com/save/:id';
+$base_url = 'https://api.typingdna.com/';
 $apiKey= '{079ecadfe08241731f9777dfc3033267}';
 $apiSecret ='{0f251ae38b0d26e133757fd82b80e27e}';
 $id = $_COOKIE["Username"];
