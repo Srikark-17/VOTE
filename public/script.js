@@ -9,6 +9,7 @@ var firebaseConfig = {
     appId: "1:172957129697:web:cc1c1ed75e6ead72bcd0a0",
     measurementId: "G-7PEQ5GLS08"
   };
+
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     
@@ -22,7 +23,14 @@ var firebaseConfig = {
         const promise = auth.createUserWithEmailAndPassword(email.value, password.value);
         promise.catch(e => alert(e.message));
     
-        alert("Registered! You may now login!");
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                console.log('signed in')
+                location.href = "./dashboard.html";
+            } else {
+              console.log('sign out')
+            }
+          });
       }
     
       function signIn() {
@@ -32,7 +40,14 @@ var firebaseConfig = {
         const promise = auth.signInWithEmailAndPassword(email.value, password.value);
         promise.catch(e => alert(e.message));
     
-        alert("Logged In " + email.value +  " !"  + " Log out by clicking log out!");
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                console.log('signed in')
+                location.href = "./dashboard.html";
+            } else {
+              console.log('sign out')
+            }
+          });
       }
     
       function signOut() {
