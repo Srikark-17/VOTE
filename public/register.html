@@ -1,16 +1,4 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    <meta name="viewport" content="width=device-width">
-    <title>repl.it</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
-
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -55,15 +43,42 @@
         }
         var tdna = new TypingDNA();
         function SubmitForm (){
-        var dna_post = document.getElementById("username").value;
+        var dna_post = document.getElementById("email").value;
         console.log(dna_post)
         var typingPattern2 = tdna.getTypingPattern({type:1, text:dna_post})
         console.log(typingPattern2)
-        $(document).ready(function () {
-            createCookie("Username", dna_post);
-            createCookie("TypingPattern", typingPattern2);
-        });
+        // $(document).ready(function () {
+        //     createCookie("Username", dna_post);
+        //     createCookie("TypingPattern", typingPattern2);
+        // });
+
+
+        var base_url = 'https://api.typingdna.com';
+        let action='/save/'
+        var key = '079ecadfe08241731f9777dfc3033267';
+        var secret = '0f251ae38b0d26e133757fd82b80e27e';
+        let id= dna_post
+        let tp= typingPattern2
+        console.log(`${base_url}${action}${id}/`)
+        fetch(`${base_url}${action}${id}/`, {
+            body: `tp=${tp}`,
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Cache-Control': 'no-cache',
+                'Authorization': 'Basic ' + 'MDc5ZWNhZGZlMDgyNDE3MzFmOTc3N2RmYzMwMzMyNjc6MGYyNTFhZTM4YjBkMjZlMTMzNzU3ZmQ4MmI4MGUyN2U=',
+            },
+            method: "POST",
+            mode: 'no-cors'
+        }).then((res) => {
+        console.log(res)
+        console.log('res should be above')
+        console.log('signed in')
+    }).catch((error) => {
+         console.log(error);
+         console.log('not signed in')
+     })
     }
+
     </script>
     
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
@@ -120,7 +135,7 @@
                                 <img src="images/icon/VOTE.png" alt="VOTE logo">
                             </a>
                         </div>
-                        <div class="login-form">
+                            <div class="login-form">
                                 <div class="form-group">
                                     <label>First Name</label>
                                     <input class="au-input au-input--full" type="text" id="firstname" placeholder="First Name">
@@ -142,8 +157,8 @@
                                         <input type="checkbox">Agree the terms and policy
                                     </label>
                                 </div>
-                                <button class="au-btn au-btn--block au-btn--blue m-b-20" role="button" onclick="signUp() " >Firebase</button><!--action="register.php"-->
-                                <!-- <button class="au-btn au-btn--block au-btn--blue m-b-20" role="button" id="btn_next" onclick="SubmitForm()" action="register.php">register</button> -->
+                                <button class="au-btn au-btn--block au-btn--blue m-b-20" role="button" onclick="signUp(); ">Register</button>
+                                                            
                             <div class="register-link">
                                 <p>
                                     Already have account?
