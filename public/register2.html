@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="keywords" content="au theme template">
+
+    <!-- Title Page-->
+    <title>Register</title>
+
+    <!-- Fontfaces CSS-->
+    <link href="css/font-face.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    <!-- Bootstrap CSS-->
+    <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
+    <!-- Vendor CSS-->
+    <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+    
+    <!-- Main CSS-->
+    <link href="css/theme.css" rel="stylesheet" media="all">
+<!-- 
+    <script src="js/register.js"></script> -->
+    <script src="js/typingdna.js" type='application/javascript'></script>
+    <script>
+        function createCookie(cookieName,cookieValue)
+        {
+          //var date = new Date();
+          //date.setTime(date.getTime()+(daysToExpire*24*60*60*1000));
+          document.cookie = cookieName + "=" + cookieValue /*+ "; expires=" + date.toGMTString();*/
+        }
+        var tdna = new TypingDNA();
+        function SubmitForm (){
+        var dna_post = document.getElementById("username").value;
+        console.log(dna_post)
+        var typingPattern2 = tdna.getTypingPattern({type:1, text:dna_post})
+        console.log(typingPattern2)
+        $(document).ready(function () {
+            createCookie("Username", dna_post);
+            createCookie("TypingPattern", typingPattern2);
+        });
+    }
+    </script>
+    
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+
+    
+    <!-- <script>
+        var tdna  = new TypingDNA();
+        tdna.start()
+//         var typingPattern = tdna.getTypingPattern({type:0, length:160});
+// //sametext pattern
+//         var typingPattern = tdna.getTypingPattern({type:1, text:"Hello5g21?*"});
+// //extended pattern
+//         var typingPattern = tdna.getTypingPattern({type:2, text:"example@mail.com"});
+//         console.log(typingPattern)
+//         console.log(typingPattern1)
+//         console.log(typingPattern2)
+    </script> -->
+    <!-- <script>
+        $(document).ready(function(){
+        
+        var tdna = new TypingDNA();
+        //anytext pattern
+        var typingPattern = tdna.getTypingPattern({type:0, length:160});
+        //sametext pattern
+        var typingPattern1 = tdna.getTypingPattern({type:1, text:"Hello5g21?*"});
+        //extended pattern
+        var typingPattern2 = tdna.getTypingPattern({type:2, text:"example@mail.com"});
+        console.log(typingPattern)
+        console.log(typingPattern1)
+        console.log(typingPattern2)
+        //   $('.submit_btn').click(function(){
+        // var tdna = new TypingDNA();
+        // var dna_post = $('#mydna').val();
+        // //alert(dna_post);
+        // var typingPattern2 = tdna.getTypingPattern({type:2, text:dna_post});
+        // alert(typingPattern2);
+        // // Post typingPattern2 data via an ajax call to be processed by Restful API
+            
+        //   });
+        });
+        </script> -->
+</head>
+
+<body class="animsition">
+    
+    <div class="page-wrapper">
+        <div class="page-content--bge5">
+            <div class="container">
+                <div class="login-wrap">
+                    <div class="login-content">
+                        <div class="login-logo">
+                            <a href="#">
+                                <img src="images/icon/VOTE.png" alt="VOTE logo">
+                            </a>
+                        </div>
+                        <div class="login-form">
+                                <div class="form-group">
+                                    <label>ghcf Name</label>
+                                    <input class="au-input au-input--full" type="text" id="firstname" placeholder="First Name">
+                                </div>
+                                <div class="form-group">
+                                    <label>Last Name</label>
+                                    <input class="au-input au-input--full" id="lastname"type="text" name="" placeholder="Last Name">
+                                </div>
+                                <div class="form-group">
+                                    <label>Email Address</label>
+                                    <input class="au-input au-input--full" autocomplete="off", type="text", id="email"  placeholder="Email", oncopy="return false", onpaste="return false">
+                                </div>
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <input class="au-input au-input--full" autocomplete="off" type="password" id="password" placeholder="Password" oncopy="return false", onpaste="return false">
+                                </div>
+                                <div class="login-checkbox">
+                                    <label>
+                                        <input type="checkbox">Agree the terms and policy
+                                    </label>
+                                </div>
+                                <button class="au-btn au-btn--block au-btn--blue m-b-20" role="button" onclick="signUp() " >Firebase</button><!--action="register.php"-->
+                                <!-- <button class="au-btn au-btn--block au-btn--blue m-b-20" role="button" id="btn_next" onclick="SubmitForm()" action="register.php">register</button> -->
+                            <div class="register-link">
+                                <p>
+                                    Already have account?
+                                    <a href="login.html">Sign In</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <!-- Jquery JS-->
+    <script src="vendor/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap JS-->
+    <script src="vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <!-- Vendor JS       -->
+    <script src="vendor/slick/slick.min.js">
+    </script>
+    <script src="vendor/wow/wow.min.js"></script>
+    <script src="vendor/animsition/animsition.min.js"></script>
+    <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+    </script>
+    <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
+    <script src="vendor/counter-up/jquery.counterup.min.js">
+    </script>
+    <script src="vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="vendor/select2/select2.min.js">
+    </script>
+     
+    <!-- <script> tdna = new TypingDNA(); /** creates an instance of the TypingDNA typing pattern recording class */
+        tdna.startDiagram(); /** starts the recording of a new typing pattern, will call tdna.reset() to reset later *
+         document.getElementById('username').focus();
+
+         /*****************************************************
+         * called after submitting a username; if username
+         * is ok it redirects to the verify page
+         *****************************************************/
+        function validateUser(form) {
+            if(!form) {
+                return false;
+            }
+            var username = document.getElementById("username");
+            if(username && username.value.length > 5) {
+                swapContent('step_username', 'step_loading');
+                var user = form.username.value.toString().trim();
+                var pass = form.password.value.toString().trim();
+                form.textid.value = TypingDNA.getTextId(user + pass);
+                form.diagram.value = tdna.getDiagram(user + pass);
+                console.log(form.textid.value)
+                console.log(form.diagram.value)
+                console.log(user)
+                console.log(pass)
+                return true;
+            } else {
+                alert('Your username/id should be at least 6 characters in length');
+                return false;
+            }
+        }</script> -->
+    <!-- Main JS-->
+    <script src="js/main.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
