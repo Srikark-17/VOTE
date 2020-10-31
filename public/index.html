@@ -14,7 +14,7 @@
     <meta name="author" content="">
 
     <!-- Site Icons -->
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="file:///C:/Users/sjccuser/Downloads/cis_024c_05112020_headlines/headlines/templates/VOTE-master/public/favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
     <!-- Bootstrap CSS -->
@@ -58,13 +58,9 @@
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a data-scroll-nav="0" href="#main-banner" class="active">Home</a></li>
-                        <li><a data-scroll-nav="1" href="#about">About Us</a></li>
-                        <li><a data-scroll-nav="2" href="#issues">Issues</a></li>
-                        <li><a data-scroll-nav="3" href="#event">Event</a></li>
-						<li><a data-scroll-nav="4" href="#gallery">Gallery</a></li>
-                        <li><a data-scroll-nav="5" href="#media">Multimedia</a></li>
-						<li><a data-scroll-nav="6" href="#blog">Blog</a></li>
-                        <li><a data-scroll-nav="7" href="#contact">Contact</a></li>
+                        <li><a data-scroll-nav="1" href="#about">Main Page</a></li>
+                        <li><a href="file:///C:/Users/sjccuser/Downloads/cis_024c_05112020_headlines/headlines/templates/VOTE-master/public/dashboard.html" data-scroll-nav="2" href="#issues">Dashboard</a></li>
+
                     </ul>
                 </div>
             </div>
@@ -482,89 +478,9 @@
                 
             </div>
         </div>
+        <button><a href="file:///C:/Users/sjccuser/Downloads/cis_024c_05112020_headlines/headlines/templates/VOTE-master/public/dashboard.html">Dashboard</a></button>
     
-        <div id="donate" data-scroll-index="7" class="section db">
-            <div class="container">
-                <div class="section-title text-center">
-                    <h3>Contact</h3>
-                    <p class="lead">Please fill out this form to submit something.</p>
-                </div>
-    
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="contact_form">
-                            <div id="message"></div>
-                            <form id="contactform" class="row" action="contact.php" name="contactform" method="post">
-                                <fieldset class="row-fluid">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                        <input type="text" name="first_name" id="first_name" class="form-control" placeholder="First Name">
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                        <input type="text" name="last_name" id="last_name" class="form-control" placeholder="Last Name">
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                        <input type="email" name="email" id="email" class="form-control" placeholder="Your Email">
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                        <input type="text" name="phone" id="phone" class="form-control" placeholder="Your Phone">
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                        <label class="sr-only">Select Service</label>
-                                        <select name="select_service" id="select_service" class="selectpicker form-control" data-style="btn-white">
-                                            <option value="12">Would you like to donate money to go to a political organization or social organization of your choice?</option>
-                                            <option value="Political Parties">Political Parties</option>
-                                            <option value="For Politician">For Politician</option>
-                                            <option value="Others">Others</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                        <label class="sr-only">What is max price?</label>
-                                        <select name="select_price" id="select_price" class="selectpicker form-control" data-style="btn-white">
-                                            <option value="$100 - $2000">0 - $100</option>
-                                            <option value="$2000 - $4000">$100 - $1000</option>
-                                            <option value="$4000 - $10000">$1000 - $10000</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <textarea class="form-control" name="comments" id="comments" rows="6" placeholder="Submit a blog, or post"></textarea>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text-center">
-                                        <button type="submit" value="SEND" id="submit" class="btn btn-light btn-radius btn-brd grd1 btn-block">Pay Now via PayPal</button>
-                                    </div>
-                                </fieldset>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-        <div class="copyrights">
-            <div class="container">
-                <div class="footer-distributed">
-                    <div class="footer-left">
-                        <p class="footer-links">
-                            <a href="#">Home</a>
-                            <a href="#">Blog</a>
-                            <a href="#">Pricing</a>
-                            <a href="#">About</a>
-                            <a href="#">Faq</a>
-                            <a href="#">Contact</a>
-                        </p>
-                    </div>
-    
-                    <div class="footer-right">
-                        <form method="get" action="#">
-                            <input placeholder="Subscribe our newsletter.." name="search">
-                            <i class="fa fa-envelope-o"></i>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-        <a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
-    
+
         <!-- ALL JS FILES -->
         <script src="js/all.js"></script>
         <!-- Camera Slider -->
@@ -587,8 +503,9 @@
 // })
 // }
 
+
 </script>
-<button onclick='getnews()'>Get news!</button>
+<button onclick='getnews()'><a href="file:///C:/Users/sjccuser/Downloads/cis_024c_05112020_headlines/headlines/templates/VOTE-master/public/dashboard.html"></a></button>
 <div id="output"></div>
     
     
