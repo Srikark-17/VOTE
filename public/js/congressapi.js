@@ -11,7 +11,7 @@ getStatementData = () => {
 })
     return promise.then((res) => {
         console.log(res)
-      return res.results
+      return res.json()
     });
 };
 
