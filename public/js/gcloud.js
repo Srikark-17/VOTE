@@ -1,21 +1,10 @@
 let API_KEY = "AIzaSyAtuyBVAQ_eNq95r8RjB38Oj5DtalyL_-E"
-
-getPollingLocationData = () => {
-    let place = document.getElementById("pac-input").value;
-    const URL = "https://civicinfo.googleapis.com/civicinfo/v2/voterinfo?";
-    const FULL_URL = `${URL}address=${place}&key=${API_KEY}`;
-    const pollingPromise = fetch(FULL_URL);
-    return pollingPromise.then((response) => {
-      return response.json()
-    });
-  };
-
 getRepData = () => {
     let place = document.getElementById("pac-input").value;
     const URL = "https://www.googleapis.com/civicinfo/v2/representatives"
     const repPromise = fetch(`${URL}?key=${API_KEY}&address=${place}`)
     return repPromise.then((res) =>{
-        return res.json()
+        console.log(res.json()) 
     })
 }
 

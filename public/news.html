@@ -7,7 +7,7 @@
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
     <!-- Title Page-->
-    <title>Polling Locations</title>
+    <title>News</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -29,6 +29,18 @@
 
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- Site CSS -->
+        <link rel="stylesheet" href="style.css">
+        
+        <!-- ALL VERSION CSS -->
+        <link rel="stylesheet" href="css/versions.css">
+        <!-- Responsive CSS -->
+        <link rel="stylesheet" href="css/responsive.css">
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="css/custom.css">
+    
 
     <style type="text/css">
     /* force class color to override the bootstrap base rule
@@ -42,6 +54,7 @@
           text-decoration: none;
     }
     </style>
+
     <!-- JavaScript -->
     <script>
         function initAutocomplete() {
@@ -53,7 +66,7 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyQHeTSGuhn_DPNZMnukVeJfC1F0qb1rk&callback=initAutocomplete&libraries=places&v=weekly"
       defer
     ></script>
-    <script src="js/gcloud.js"></script>
+    <script src="js/news.js"></script>
 </head>
 
 <body class="animsition">
@@ -92,9 +105,13 @@
                             <a href="bill.html">
                                 <i class="far fa-check-square"></i>Bills and Proposals</a>
                         </li>
-                        <li class="active">
+                        <li>
                             <a href="pollingloc.html">
                                 <i class="fas fa-map-marker-alt"></i>Polling Locations</a>
+                        </li>
+                        <li class="active">
+                            <a href="news.html">
+                                <i class="fas fa-map-marker-alt"></i>News</a>
                         </li>
                     </ul>
                 </div>
@@ -125,9 +142,13 @@
                             <a href="bill.html">
                                 <i class="far fa-check-square"></i>Bills and Proposals</a>
                         </li>
-                        <li class="active">
+                        <li>
                             <a href="pollingloc.html">
                                 <i class="fas fa-map-marker-alt"></i>Polling Locations</a>
+                        </li>
+                        <li class="active">
+                            <a href="news.html">
+                                <i class="fas fa-newspaper"></i>News</a>
                         </li>
                     </ul>
                 </nav>
@@ -141,87 +162,107 @@
                     </div>
                 </div>
             </header>
-                <input id="pac-input" class="au-input au-input--xl" style="margin-top: 100px; margin-left: 40px;" type="text" name="search" placeholder="Type your address" />
-            <button onclick="getPollingInfo(); getRepInfo();" style="background-color: #4173d7; width: 45px; height: 45px; border-radius: 5px;" type="submit">
-                <i class="zmdi zmdi-search" style="color: white;"></i>
-            </button>
-            <div class="main-content">
-                <div class="section__content section__content--p30">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <span style="padding-left: 15px; font-size: 30px;">Polling Locations</span>
-                            <div class="col-lg-12">
-                                <table class="table table-striped">
-                                    <thead>
-                                        <tr style="background-color: #4173d7;">
-                                        <th scope="col" style="color: white;">Location Name</th>
-                                        <th scope="col" style="color: white;">Address</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr id="location1">
-                                        </tr>
-
-                                        <tr id="location2">
-                                        </tr>
-
-                                        <tr id="location3">
-                                        </tr>
-
-                                        <tr id="location4">
-                                        </tr>
-
-                                        <tr id="location5">
-                                        </tr>
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+            <div id="blog" data-scroll-index="6" class="section lb">
+                <div class="container">
+                    <div class="section-title text-center">
+                        <h3>News</h3>
+                        <p class="lead">News about politics.<br> Highly recommended to read.</p>
                     </div>
                     <div class="row">
-                        <span style="padding-left: 15px; font-size: 30px; margin-left: 15px; margin-top: 20px;">Elected Representatives</span>
-                        <div class="col-lg-12">
-                            <table class="table table-striped" style="margin-left: 15px;">
-                                <thead>
-                                    <tr style="background-color: #4173d7;">
-                                    <th scope="col" style="color: white;"></th>
-                                    <th scope="col" style="color: white;">Name</th>
-                                    <th scope="col" style="color: white;">Position</th>
-                                    <th scope="col" style="color: white;">Party</th>
-                                    <th scope="col" style="color: white;">Phone Number</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr id="president">
-                                    </tr>
-
-                                    <tr id="vice-president">
-                                    
-                                    </tr>
-
-                                    <tr id="senator-1">
-                                    
-                                    </tr>
-
-                                    <tr id="senator-2">
-                                    
-                                    </tr>
-                                    <tr id="representative">
-                                        
-                                    </tr>
-                                    <tr id="governor">
-                                        
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div class="col-md-4 col-sm-6 col-lg-4">
+                            <div class="post-box">
+                                <div class="post-thumb">
+                                    <img src="https://static01.nyt.com/images/2020/10/31/us/-promo-1604183914590/-promo-1604183914590-superJumbo.png" class="img-responsive" alt="post-img" />
+                                </div>
+                                <div class="post-info">
+                                    <a href="https://nyti.ms/2TE9VNY"><h4 id="title1"></h4></a>
+                                    <ul>
+                                        <li id="byline1"></li>
+                                    </ul>
+                                    <p id="about1"></p>
+                                </div>
+                            </div>
                         </div>
+                        <div class="col-md-4 col-sm-6 col-lg-4">
+                            <div class="post-box">
+                                <div class="post-thumb">
+                                    <img src="https://static01.nyt.com/images/2020/10/31/us/battleground-states-trump-biden-promo-1604182710610/battleground-states-trump-biden-promo-1604182710610-superJumbo.png" class="img-responsive" alt="post-img" />
+                                    
+                                </div>
+                                <div class="post-info">
+                                    <a href="https://nyti.ms/3kMbTb7"><h4 id="title2"></h4></a>
+                                    <ul>
+                                        <li id="byline2"></li>
+                                    </ul>
+                                    <p id="about2"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-lg-4">
+                            <div class="post-box">
+                                <div class="post-thumb">
+                                    <img src="https://static01.nyt.com/images/2020/10/28/us/politics/01dc-trump-dishonesty-sub/merlin_179123178_1d399e9d-a92f-4e0f-bcd3-1b5d19011f80-superJumbo.jpg" class="img-responsive" alt="post-img" />
+                                    
+                                </div>
+                                <div class="post-info">
+                                    <a href="https://nyti.ms/2HWkHNp"><h4 id="title3"></h4></a>
+                                    <ul>
+                                        <li id="byline3"></li>
+                                    </ul>
+                                    <p id="about3"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-lg-4">
+                            <div class="post-box">
+                                <div class="post-thumb">
+                                    <img src="https://static01.nyt.com/images/2020/10/31/us/politics/31dc-biden-rudy-1/merlin_177705276_2c22a818-fba0-4766-9e4c-d86a91b5a46c-superJumbo.jpg" class="img-responsive" alt="post-img" />
+                                    
+                                </div>
+                                <div class="post-info">
+                                    <a href="https://nyti.ms/3kMbTb7"><h4 id="title4"></h4></a>
+                                    <ul>
+                                        <li id="byline4"></li>
+                                    </ul>
+                                    <p id="about4"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-lg-4">
+                            <div class="post-box">
+                                <div class="post-thumb">
+                                    <img src="https://static01.nyt.com/images/2020/11/01/us/politics/01trump-polling-1/merlin_179376870_18f5b85d-d11e-4085-ada5-7a124b6b3424-superJumbo.jpg" class="img-responsive" alt="post-img" />
+                                    
+                                </div>
+                                <div class="post-info">
+                                    <a href="https://nyti.ms/2JnGduJp"><h4 id="title5"></h4></a>
+                                    <ul>
+                                        <li id="byline5"></li>
+                                    </ul>
+                                    <p id="about5"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-lg-4">
+                            <div class="post-box">
+                                <div class="post-thumb">
+                                    <img src="https://static01.nyt.com/images/2020/11/01/us/politics/01election-delays-1/merlin_179351658_3220e977-6519-43c5-84a9-7e8ba82d6583-superJumbo.jpg" class="img-responsive" alt="post-img" />
+                                    
+                                </div>
+                                <div class="post-info">
+                                    <a href="https://nyti.ms/31ZxsO8"><h4 id="title6"></h4></a>
+                                    <ul>
+                                        <li id="byline6"></li>
+                                    </ul>
+                                    <p id="about6"></p>
+                                </div>
+                            </div>
+                        </div>
+                        
                     </div>
-                </div>
+                    
                 </div>
             </div>
-        </div>
-
     </div>
 
     <!-- Jquery JS-->
