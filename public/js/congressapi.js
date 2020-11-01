@@ -25,6 +25,7 @@ getBillData = () => {
   }
 })
     return promise.then((res) => {
+        console.log(res)
       return res.json()
     });
 };
@@ -35,7 +36,7 @@ getNomineesData = () => {
     "X-Api-Key": "b3RmcGX9ewJVUIcZdfAPPi7QjLINzN6TR5Rf28Vn"
   }
     })
-    return promise.then((res) => {
+    return promise.then((res) =>{
         console.log(res)
         return res.json()
     })
@@ -297,6 +298,166 @@ getNomineesData = () => {
         billtd.appendChild(billText);
         document.getElementById("name").appendChild(billtd);
     }
+
+    // for (let i = 1; i < 2; i++) {
+    //     // Picture of vice-president
+    //     let img = new Image();
+    //     img.src = `${res.officials[1].photoUrl}`
+    //     img.style.height = "100px"
+    //     document.getElementById('vice-president').appendChild(img)
+
+    //     // Name of the vice-president
+    //     let nametd = document.createElement('th');
+    //     let nameText = document.createTextNode(`${res.officials[1].name}`)
+    //     nametd.appendChild(nameText);
+    //     document.getElementById("vice-president").appendChild(nametd);
+
+    //     // Position of the vice-president
+    //     let positiontd = document.createElement('td');
+    //     let positionText = document.createTextNode(`${res.offices[1].name}`)
+    //     positiontd.appendChild(positionText);
+    //     document.getElementById("vice-president").appendChild(positiontd);
+
+    //     // Party of the vice-president
+    //     let partytd = document.createElement('td');
+    //     let partyText = document.createTextNode(`${res.officials[1].party}`)
+    //     partytd.appendChild(partyText);
+    //     document.getElementById("vice-president").appendChild(partytd);
+
+    //     // Phone Number of the vice-president
+    //     let phonetd = document.createElement('td');
+    //     let phoneText = document.createTextNode(`${res.officials[1].phones[0]}`)
+    //     phonetd.appendChild(phoneText);
+    //     document.getElementById("vice-president").appendChild(phonetd);
+    // }
+
+    // for (let i = 2; i < 3; i++) {
+    //     // Picture of senator-1
+    //     let img = new Image();
+    //     img.src = `${res.officials[2].photoUrl}`
+    //     img.style.height = "100px"
+    //     document.getElementById('senator-1').appendChild(img)
+
+    //     // Name of the senator-1
+    //     let nametd = document.createElement('th');
+    //     let nameText = document.createTextNode(`${res.officials[2].name}`)
+    //     nametd.appendChild(nameText);
+    //     document.getElementById("senator-1").appendChild(nametd);
+
+    //     // Position of the senator-1
+    //     let positiontd = document.createElement('td');
+    //     let positionText = document.createTextNode(`${res.offices[2].name}`)
+    //     positiontd.appendChild(positionText);
+    //     document.getElementById("senator-1").appendChild(positiontd);
+
+    //     // Party of the senator-1
+    //     let partytd = document.createElement('td');
+    //     let partyText = document.createTextNode(`${res.officials[2].party}`)
+    //     partytd.appendChild(partyText);
+    //     document.getElementById("senator-1").appendChild(partytd);
+
+    //     // Phone Number of the senator-1
+    //     let phonetd = document.createElement('td');
+    //     let phoneText = document.createTextNode(`${res.officials[2].phones[0]}`)
+    //     phonetd.appendChild(phoneText);
+    //     document.getElementById("senator-1").appendChild(phonetd);
+    // }
+
+    // for (let i = 3; i < 4; i++) {
+    //     // Picture of senator-2
+    //     let img = new Image();
+    //     img.src = `${res.officials[3].photoUrl}`
+    //     img.style.height = "100px"
+    //     document.getElementById('senator-2').appendChild(img)
+
+    //     // Name of the senator-2
+    //     let nametd = document.createElement('th');
+    //     let nameText = document.createTextNode(`${res.officials[3].name}`)
+    //     nametd.appendChild(nameText);
+    //     document.getElementById("senator-2").appendChild(nametd);
+
+    //     // Position of the senator-2
+    //     let positiontd = document.createElement('td');
+    //     let positionText = document.createTextNode(`${res.offices[2].name}`)
+    //     positiontd.appendChild(positionText);
+    //     document.getElementById("senator-2").appendChild(positiontd);
+
+    //     // Party of the senator-2
+    //     let partytd = document.createElement('td');
+    //     let partyText = document.createTextNode(`${res.officials[3].party}`)
+    //     partytd.appendChild(partyText);
+    //     document.getElementById("senator-2").appendChild(partytd);
+
+    //     // Phone Number of the senator-2
+    //     let phonetd = document.createElement('td');
+    //     let phoneText = document.createTextNode(`${res.officials[3].phones[0]}`)
+    //     phonetd.appendChild(phoneText);
+    //     document.getElementById("senator-2").appendChild(phonetd);
+    // }
+
+    // for (let i = 4; i < 5; i++) {
+    //     // Picture of representative
+    //     let img = new Image();
+    //     img.src = `${res.officials[4].photoUrl}`
+    //     img.style.height = "100px"
+    //     document.getElementById('representative').appendChild(img)
+
+    //     // Name of the representative
+    //     let nametd = document.createElement('th');
+    //     let nameText = document.createTextNode(`${res.officials[4].name}`)
+    //     nametd.appendChild(nameText);
+    //     document.getElementById("representative").appendChild(nametd);
+
+    //     // Position of the representative
+    //     let positiontd = document.createElement('td');
+    //     let positionText = document.createTextNode(`${res.offices[3].name}`)
+    //     positiontd.appendChild(positionText);
+    //     document.getElementById("representative").appendChild(positiontd);
+
+    //     // Party of the representative
+    //     let partytd = document.createElement('td');
+    //     let partyText = document.createTextNode(`${res.officials[4].party}`)
+    //     partytd.appendChild(partyText);
+    //     document.getElementById("representative").appendChild(partytd);
+
+    //     // Phone Number of the representative
+    //     let phonetd = document.createElement('td');
+    //     let phoneText = document.createTextNode(`${res.officials[4].phones[0]}`)
+    //     phonetd.appendChild(phoneText);
+    //     document.getElementById("representative").appendChild(phonetd);
+    // }
+
+    // for (let i = 5; i < 6; i++) {
+    //     // Picture of the governor
+    //     let img = new Image();
+    //     img.src = `${res.officials[5].photoUrl}`
+    //     img.style.height = "100px"
+    //     document.getElementById('governor').appendChild(img)
+
+    //     // Name of the governor
+    //     let nametd = document.createElement('th');
+    //     let nameText = document.createTextNode(`${res.officials[5].name}`)
+    //     nametd.appendChild(nameText);
+    //     document.getElementById("governor").appendChild(nametd);
+
+    //     // Position of the governor
+    //     let positiontd = document.createElement('td');
+    //     let positionText = document.createTextNode(`${res.offices[4].name}`)
+    //     positiontd.appendChild(positionText);
+    //     document.getElementById("governor").appendChild(positiontd);
+
+    //     // Party of the governor
+    //     let partytd = document.createElement('td');
+    //     let partyText = document.createTextNode(`${res.officials[5].party}`)
+    //     partytd.appendChild(partyText);
+    //     document.getElementById("governor").appendChild(partytd);
+
+    //     // Phone Number of the governor
+    //     let phonetd = document.createElement('td');
+    //     let phoneText = document.createTextNode(`${res.officials[5].phones[0]}`)
+    //     phonetd.appendChild(phoneText);
+    //     document.getElementById("governor").appendChild(phonetd);
+    // }
  }
 
  getStatementInfo = () => {
