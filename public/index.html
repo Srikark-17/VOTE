@@ -14,8 +14,7 @@
     <meta name="author" content="">
 
     <!-- Site Icons -->
-    <link rel="shortcut icon" href="file:///C:/Users/sjccuser/Downloads/cis_024c_05112020_headlines/headlines/templates/VOTE-master/public/favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -58,8 +57,11 @@
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a data-scroll-nav="0" href="#main-banner" class="active">Home</a></li>
-                        <li><a data-scroll-nav="1" href="#about">Main Page</a></li>
-                        <li><a href="file:///C:/Users/sjccuser/Downloads/cis_024c_05112020_headlines/headlines/templates/VOTE-master/public/dashboard.html" data-scroll-nav="2" href="#issues">Dashboard</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="pollingloc.html">Polling Locations</a></li>
+                        <li><a href="bill.html">Bills and Proposals</a></li>
+                        <li><a href="statements.html">Statements</a></li>
+                        <li><a href="ballot.html">Ballots</a></li>
 
                     </ul>
                 </div>
@@ -73,24 +75,6 @@
 				<div class="container">
 					<h1 style=color:white; class="wow fadeInUp animated">Welcome To VOTE --> </h1>
 					<h1 style=color:white; class="wow fadeInUp animated" data-wow-delay="0.2s">Voting Online and Tools for Election!</h1>
-					<a data-scroll href="#" class="btn btn-light btn-radius btn-brd grd1">DONATE</a>
-				</div> 
-			</div> 
-		</div>
-		<div data-src="uploads/slide-2.jpg">
-			<div class="camera_caption">
-				<div class="container">
-					<h1 class="wow fadeInUp animated">Voting Online and Tools for Election!</h1>
-					<a data-scroll href="#" class="btn btn-light btn-radius btn-brd grd1">DONATE</a>
-				</div> 
-			</div> 
-		</div>
-		<div data-src="uploads/slide-3.jpg">
-			<div class="camera_caption">
-				<div class="container">
-					<h1 class="wow fadeInUp animated">Voting Online and Tools for Election!</h1>
-					<p class="wow fadeInUp animated" data-wow-delay="0.2s">Voting Online and Tools for Election!</p>
-					<a data-scroll href="#" class="btn btn-light btn-radius btn-brd grd1">DONATE</a>
 				</div> 
 			</div> 
 		</div>
@@ -491,22 +475,6 @@
         <!-- ALL PLUGINS -->
         <script src="js/custom.js"></script>
         <script src="js/jquery.vide.js"></script>
-<script>
-    
-// function getnews() {
-// fetch('http://cors-anywhere.herokuapp.com/http://newsapi.org/v2/top-headlines?country=us&apikey=6206b16744af47a2a6a8269496d50bf0'),{headers: new Headers({"X-Requested-Width":"mgnolia"})}
-// .then(a => a.json())
-// .then(response =>{ 
-// for (var i=0; i<response.articles.length;i++){
-// document.getElementById("output").innerHTML += "<div style='padding-top: 20px;'><img style='float:left;width:150px;' src="'+response.articles[i].url.TOImage+"'><h1>"+response.articles[i].title+"</h1>"+response.articles[i].source.name+"<br>"+response.articles[i].description+"<a href="'+response.articles[i].url+"'target='_blank'>"+responses.articles[i].url+"</a>"</div>";
-// }
-// })
-// }
-
-
-</script>
-<button onclick='getnews()'><a href="file:///C:/Users/sjccuser/Downloads/cis_024c_05112020_headlines/headlines/templates/VOTE-master/public/dashboard.html"></a></button>
-<div id="output"></div>
     
     
 </body>
