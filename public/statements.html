@@ -132,19 +132,21 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <h3 class="title-5 m-b-35">Politican Statements and Stances</h3>
+                                
                                 <input id="pac-input" class="au-input au-input--xl" style="width: 400;" type="text" name="search" placeholder="Enter a poltician ID" />
                                 <button onclick="getStatementInfo();" style="background-color: #4173d7; width: 45px; height: 45px; border-radius: 5px; " type="submit">
                                     <i class="zmdi zmdi-search" style="color: white;"></i>
                                 </button>
                                 <div class="rs-select2--light rs-select2--md">
                                     <select class="js-select2" id="property" aria-placeholder="Congress #">
-                                        <option value="113" id="">113</option>
-                                        <option value="114" id="">114</option>
-                                        <option value="115" id="">115</option>
-                                        <option value="116" id="">116</option>
+                                        <option value="113" id="">2013-2014</option>
+                                        <option value="114" id="">2015-2016</option>
+                                        <option value="115" id="">2017-2018</option>
+                                        <option value="116" id="">2019-2020</option>
                                     </select>
                                     <div class="dropDownSelect2"></div>
                                 </div>
+                                
                                 <!-- <div class="rs-select2--light rs-select2--sm">
                                     <select class="js-select2" name="time">
                                         <option selected="selected">Member ID</option>
@@ -156,7 +158,12 @@
                                 <button class="au-btn-filter">
                                     <i class="zmdi zmdi-filter-list"></i>filters</button>
                             </div>
+
                             <div class="table-data__tool">
+                                <a href="https://www.congress.gov/members?searchResultViewType=expanded"> Go Here to find their year</a>
+                                <a href="https://www.congress.gov/help/field-values/member-bioguide-ids">
+                                    Go here to find your Rep. Member-ID
+                                </a>
                                 <div class="table-data__tool-right">
                                     
                                 </div>
