@@ -14,7 +14,9 @@ var firebaseConfig = {
     firebase.initializeApp(firebaseConfig);
     
       const auth = firebase.auth();
-    
+      const db = firebase.firestore()
+      let checked = false;
+      //remember to set webpage to be null if checked is false
       function signUp() {
     
         var email = document.getElementById("email");
@@ -32,7 +34,24 @@ var firebaseConfig = {
             }
           });
       }
-    
+      function postVerifyInformation(){
+        //Check given database if data is present, if not then do not allow them to proceed
+        checked = true
+      }
+      function postVoterBallot(){
+        document.getElementById('JD-FD').value
+        db.collection("ballots").doc("example").set({
+          name: "Los Angeles",
+          state: "CA",
+          country: "USA"
+        })
+        .then(function() {
+            console.log("Document successfully written!");
+        })
+        .catch(function(error) {
+            console.error("Error writing document: ", error);
+        });
+      }
       function signIn() {
         var email = document.getElementById("email");
         var password = document.getElementById("password");
