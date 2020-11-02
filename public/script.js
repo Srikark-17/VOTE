@@ -1,4 +1,11 @@
-import registeredVoters from './registeredvoterdatabase'
+const registeredVoters = [{
+  first_name: 'Om',
+  middle_name: 'K',
+  last_name: 'Joshi',
+  full_address: 'example',
+  dob: 'example',
+  pob: 'example'
+}]
 
 // Your web app's Firebase configuration
 var firebaseConfig = {
@@ -37,54 +44,62 @@ var firebaseConfig = {
           });
       }
       function postVerifyInformation(){
-        numberOfRegisteredVoters = registeredVoters.length
-        firstName = document.getElementById("first-name")
-        middleName = document.getElementById("middle-name")
-        lastName = document.getElementById("last-name")
-        dob = document.getElementById("dob")
-        pob = document.getElementById("pob")
-        address = document.getElementById("address")
+        let numberOfRegisteredVoters = registeredVoters.length
+        let firstName = document.getElementById("first-name").value
+        let middleName = document.getElementById("middle-name").value
+        let lastName = document.getElementById("last-name").value
+        let dob = document.getElementById("dob").value
+        let pob = document.getElementById("pob").value
+        let address = document.getElementById("full-address").value
         console.log('checking')
         for (let i = 0; i < numberOfRegisteredVoters; i++){
-          if(numberOfRegisteredVoters[i].firstName == firstName){
+          console.log(registeredVoters[i].first_name)
+          console.log(firstName)
+          if(registeredVoters[i].first_name == firstName){
             var firstNameValid = true
           }else{
             var firstNameValid = false
           }
-          if(numberOfRegisteredVoters[i].middleName == middleName){
+          if(registeredVoters[i].middle_name == middleName){
             var middleNameValid = true
           }else{
             var middleNameValid = false
           }
-          if(numberOfRegisteredVoters[i].lastName == lastName){
+          if(registeredVoters[i].last_name == lastName){
             var lastNameValid = true
           }else{
             var lastNameValid = false
           }
-          if(numberOfRegisteredVoters[i].dob == dob){
+          if(registeredVoters[i].dob == dob){
             var dobValid = true
           }else{
             var dobValid = false
           }
-          if(numberOfRegisteredVoters[i].pob == pob){
+          if(registeredVoters[i].pob == pob){
             var pobValid = true
           }else{
             var pobValid = false
           }
-          if(numberOfRegisteredVoters[i].address == address){
+          if(registeredVoters[i].full_address == address){
             var addressValid = true
           }else{
             var addressValid = false
           }
           if(firstNameValid){
+            console.log('first name valid')
             if(middleNameValid){
+              console.log('middle name valid')
               if(lastNameValid){
+                console.log('last name valid')
                 if(dobValid){
+                  console.log('dob valid')
                   if(pobValid){
+                    console.log('pob valid')
                     if(addressValid){
+                      console.log('address valid')
                       console.log('verified')
-                      window.href = "./mainballot.html"
-                      break;
+                      window.open("mainballot.html")
+                      
                     }
                   }
                 }
@@ -97,17 +112,19 @@ var firebaseConfig = {
         checked = true
       }
       function postVoterBallot(){
-        document.getElementById('JD-FD').value
+        let value = document.getElementById('JD-FD').value
         db.collection("ballots").add({
-          name: ``,
+          name: `${registeredVoters[0].first_name}`+ '' + `${registeredVoters[0].middle_name}` + ''+ `${registeredVoters[0].last_name}`,
           candidateVotedFor: "CA",
           country: "USA"
         })
         .then(function() {
             console.log("Document successfully written!");
+            windows.open("success.html")
         })
         .catch(function(error) {
             console.error("Error writing document: ", error);
+            window.open("denial.html")
         });
       }
       function signIn() {
@@ -120,7 +137,7 @@ var firebaseConfig = {
         firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
                 console.log('signed in')
-                location.href = "./dashboard.html";
+                window.open("dashboard.html")
             } else {
               console.log('sign out')
             }
