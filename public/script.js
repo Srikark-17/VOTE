@@ -1,3 +1,5 @@
+import registeredVoters from './registeredvoterdatabase'
+
 // Your web app's Firebase configuration
 var firebaseConfig = {
     apiKey: "AIzaSyC4j0iA97kHCbZrcKtWTa3GacYgQ8872Ck",
@@ -35,14 +37,70 @@ var firebaseConfig = {
           });
       }
       function postVerifyInformation(){
-        //Check given database if data is present, if not then do not allow them to proceed
+        numberOfRegisteredVoters = registeredVoters.length
+        firstName = document.getElementById("first-name")
+        middleName = document.getElementById("middle-name")
+        lastName = document.getElementById("last-name")
+        dob = document.getElementById("dob")
+        pob = document.getElementById("pob")
+        address = document.getElementById("address")
+        console.log('checking')
+        for (let i = 0; i < numberOfRegisteredVoters; i++){
+          if(numberOfRegisteredVoters[i].firstName == firstName){
+            var firstNameValid = true
+          }else{
+            var firstNameValid = false
+          }
+          if(numberOfRegisteredVoters[i].middleName == middleName){
+            var middleNameValid = true
+          }else{
+            var middleNameValid = false
+          }
+          if(numberOfRegisteredVoters[i].lastName == lastName){
+            var lastNameValid = true
+          }else{
+            var lastNameValid = false
+          }
+          if(numberOfRegisteredVoters[i].dob == dob){
+            var dobValid = true
+          }else{
+            var dobValid = false
+          }
+          if(numberOfRegisteredVoters[i].pob == pob){
+            var pobValid = true
+          }else{
+            var pobValid = false
+          }
+          if(numberOfRegisteredVoters[i].address == address){
+            var addressValid = true
+          }else{
+            var addressValid = false
+          }
+          if(firstNameValid){
+            if(middleNameValid){
+              if(lastNameValid){
+                if(dobValid){
+                  if(pobValid){
+                    if(addressValid){
+                      console.log('verified')
+                      window.href = "./mainballot.html"
+                      break;
+                    }
+                  }
+                }
+              }
+            }
+          }else{
+            alert('You have not registered! Please check with your local clerk!')
+          }
+        }
         checked = true
       }
       function postVoterBallot(){
         document.getElementById('JD-FD').value
-        db.collection("ballots").doc("example").set({
-          name: "Los Angeles",
-          state: "CA",
+        db.collection("ballots").add({
+          name: ``,
+          candidateVotedFor: "CA",
           country: "USA"
         })
         .then(function() {
