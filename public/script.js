@@ -115,6 +115,15 @@ var firebaseConfig = {
         let jdfdValue = document.getElementById('JD-FD').value
         let ogokValue = document.getElementById('OG-OK').value
         let jadavalue = document.getElementById('JA-DA').value
+        if(jdfdValue == 'on'){
+          jdfdValue = true
+        }
+        if(ogokValue == 'on'){
+          ogokValue = true
+        }
+        if(jadavalue == 'on'){
+          jadavalue = true
+        }
         console.log(jdfdValue)
         console.log(ogokValue)
         console.log(jadavalue)
@@ -125,7 +134,7 @@ var firebaseConfig = {
         })
         .then(function() {
             console.log("Document successfully written!");
-            windows.open("success.html")
+            window.open("success.html")
         })
         .catch(function(error) {
             console.error("Error writing document: ", error);
