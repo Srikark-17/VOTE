@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-       <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
     <!-- Title Page-->
     <title>Dashboard</title>
@@ -27,6 +27,17 @@
 
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- ALL VERSION CSS -->
+    <link rel="stylesheet" href="css/versions.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
 
     <!-- Searchbox JavaScript -->
     <script>
@@ -39,6 +50,7 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyQHeTSGuhn_DPNZMnukVeJfC1F0qb1rk&callback=initAutocomplete&libraries=places&v=weekly"
       defer
     ></script>
+    <script src="js/news.js"></script>
 </head>
 
 <body class="animsition">
@@ -149,323 +161,105 @@
                             </div>
                         </div>
                         <div class="row m-t-25">
+                            <a href="index.html">
                             <div class="col-sm-6 col-lg-3">
                                 <div class="overview-item overview-item--c1">
                                     <div class="overview__inner">
                                         <div class="overview-box clearfix">
-                                            <div class="icon">
-                                                <i class="zmdi zmdi-account-o"></i>
-                                            </div>
                                             <div class="text">
-                                                <h2>10368</h2>
-                                                <span>members online</span>
+                                                <h2>Go Back to Main Page</h2>
                                             </div>
-                                        </div>
-                                        <div class="overview-chart">
-                                            <canvas id="widgetChart1"></canvas>
                                         </div>
                                     </div>
                                 </div>
+                            </a>
                             </div>
+                            
                             <div class="col-sm-6 col-lg-3">
+                                <a href="statements.html">
                                 <div class="overview-item overview-item--c2">
                                     <div class="overview__inner">
                                         <div class="overview-box clearfix">
                                             <div class="icon">
-                                                <i class="zmdi zmdi-shopping-cart"></i>
+                                                <i class="fas fa-chart-bar"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>388,688</h2>
-                                                <span>items solid</span>
+                                                <h2>Statements</h2>
                                             </div>
-                                        </div>
-                                        <div class="overview-chart">
-                                            <canvas id="widgetChart2"></canvas>
                                         </div>
                                     </div>
                                 </div>
+                            </a>
                             </div>
                             <div class="col-sm-6 col-lg-3">
+                                <a href="ballot.html">
                                 <div class="overview-item overview-item--c3">
                                     <div class="overview__inner">
                                         <div class="overview-box clearfix">
                                             <div class="icon">
-                                                <i class="zmdi zmdi-calendar-note"></i>
+                                                <i class="fas fa-table"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>1,086</h2>
-                                                <span>this week</span>
+                                                <h2>Ballots</h2>
                                             </div>
-                                        </div>
-                                        <div class="overview-chart">
-                                            <canvas id="widgetChart3"></canvas>
                                         </div>
                                     </div>
                                 </div>
+                            </a>
                             </div>
                             <div class="col-sm-6 col-lg-3">
+                                <a href="bill.html">
                                 <div class="overview-item overview-item--c4">
                                     <div class="overview__inner">
                                         <div class="overview-box clearfix">
                                             <div class="icon">
-                                                <i class="zmdi zmdi-money"></i>
+                                                <i class="fas fa-check-square"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>$1,060,386</h2>
-                                                <span>total earnings</span>
+                                                <h2>Bills and Proposals</h2>
                                             </div>
-                                        </div>
-                                        <div class="overview-chart">
-                                            <canvas id="widgetChart4"></canvas>
                                         </div>
                                     </div>
                                 </div>
+                            </a>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-6">
+                                <a href="news.html">
                                 <div class="au-card recent-report">
                                     <div class="au-card-inner">
-                                        <h3 class="title-2">recent reports</h3>
-                                        <div class="chart-info">
-                                            <div class="chart-info__left">
-                                                <div class="chart-note">
-                                                    <span class="dot dot--blue"></span>
-                                                    <span>products</span>
-                                                </div>
-                                                <div class="chart-note mr-0">
-                                                    <span class="dot dot--green"></span>
-                                                    <span>services</span>
-                                                </div>
+                                        <h3 class="title-2">News</h3>
+                                        <div class="post-box">
+                                            <div class="post-thumb">
+                                                <img src="https://static01.nyt.com/images/2020/10/31/us/battleground-states-trump-biden-promo-1604182710610/battleground-states-trump-biden-promo-1604182710610-superJumbo.png" class="img-responsive" alt="post-img" />   
                                             </div>
-                                            <div class="chart-info__right">
-                                                <div class="chart-statis">
-                                                    <span class="index incre">
-                                                        <i class="zmdi zmdi-long-arrow-up"></i>25%</span>
-                                                    <span class="label">products</span>
-                                                </div>
-                                                <div class="chart-statis mr-0">
-                                                    <span class="index decre">
-                                                        <i class="zmdi zmdi-long-arrow-down"></i>10%</span>
-                                                    <span class="label">services</span>
-                                                </div>
+                                            <div class="post-info">
+                                                <a href="https://nyti.ms/3kMbTb7"><h4 id="title2">The Battlegrounds Within Battlegrounds</h4></a>
+                                                <ul>
+                                                    <li id="byline2">By Keith Collins, Trip Gabriel, and Stephanie Saul</li>
+                                                </ul>
+                                                <p id="about2">Here are 20 counties in battleground states that are crucial for a White House victory.</p>
                                             </div>
-                                        </div>
-                                        <div class="recent-report__chart">
-                                            <canvas id="recent-rep-chart"></canvas>
                                         </div>
                                     </div>
                                 </div>
+                            </a>
                             </div>
-                            <div class="col-lg-6">
+                            <div class="col-lg-6">  
                                 <div class="au-card chart-percent-card">
                                     <div class="au-card-inner">
-                                        <h3 class="title-2 tm-b-5">char by %</h3>
+                                        <a href="pollingloc.html">
+                                        <h3 class="title-2 tm-b-5">Polling Locations</h3>
                                         <div class="row no-gutters">
-                                            <div class="col-xl-6">
-                                                <div class="chart-note-wrap">
-                                                    <div class="chart-note mr-0 d-block">
-                                                        <span class="dot dot--blue"></span>
-                                                        <span>products</span>
-                                                    </div>
-                                                    <div class="chart-note mr-0 d-block">
-                                                        <span class="dot dot--red"></span>
-                                                        <span>services</span>
-                                                    </div>
+                                                <div class="col-xl-12">
+                                                    <img src="images/pollinglocimg.png" alt="Polling Locations">
                                                 </div>
-                                            </div>
-                                            <div class="col-xl-6">
-                                                <div class="percent-chart">
-                                                    <canvas id="percent-chart"></canvas>
-                                                </div>
-                                            </div>
                                         </div>
+                                    </a>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-9">
-                                <h2 class="title-1 m-b-25">Earnings By Items</h2>
-                                <div class="table-responsive table--no-card m-b-40">
-                                    <table class="table table-borderless table-striped table-earning">
-                                        <thead>
-                                            <tr>
-                                                <th>date</th>
-                                                <th>order ID</th>
-                                                <th>name</th>
-                                                <th class="text-right">price</th>
-                                                <th class="text-right">quantity</th>
-                                                <th class="text-right">total</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>2018-09-29 05:57</td>
-                                                <td>100398</td>
-                                                <td>iPhone X 64Gb Grey</td>
-                                                <td class="text-right">$999.00</td>
-                                                <td class="text-right">1</td>
-                                                <td class="text-right">$999.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-28 01:22</td>
-                                                <td>100397</td>
-                                                <td>Samsung S8 Black</td>
-                                                <td class="text-right">$756.00</td>
-                                                <td class="text-right">1</td>
-                                                <td class="text-right">$756.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-27 02:12</td>
-                                                <td>100396</td>
-                                                <td>Game Console Controller</td>
-                                                <td class="text-right">$22.00</td>
-                                                <td class="text-right">2</td>
-                                                <td class="text-right">$44.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-26 23:06</td>
-                                                <td>100395</td>
-                                                <td>iPhone X 256Gb Black</td>
-                                                <td class="text-right">$1199.00</td>
-                                                <td class="text-right">1</td>
-                                                <td class="text-right">$1199.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-25 19:03</td>
-                                                <td>100393</td>
-                                                <td>USB 3.0 Cable</td>
-                                                <td class="text-right">$10.00</td>
-                                                <td class="text-right">3</td>
-                                                <td class="text-right">$30.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-29 05:57</td>
-                                                <td>100392</td>
-                                                <td>Smartwatch 4.0 LTE Wifi</td>
-                                                <td class="text-right">$199.00</td>
-                                                <td class="text-right">6</td>
-                                                <td class="text-right">$1494.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-24 19:10</td>
-                                                <td>100391</td>
-                                                <td>Camera C430W 4k</td>
-                                                <td class="text-right">$699.00</td>
-                                                <td class="text-right">1</td>
-                                                <td class="text-right">$699.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-22 00:43</td>
-                                                <td>100393</td>
-                                                <td>USB 3.0 Cable</td>
-                                                <td class="text-right">$10.00</td>
-                                                <td class="text-right">3</td>
-                                                <td class="text-right">$30.00</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="col-lg-3">
-                                <h2 class="title-1 m-b-25">Top countries</h2>
-                                <div class="au-card au-card--bg-blue au-card-top-countries m-b-40">
-                                    <div class="au-card-inner">
-                                        <div class="table-responsive">
-                                            <table class="table table-top-countries">
-                                                <tbody>
-                                                    <tr>
-                                                        <td>United States</td>
-                                                        <td class="text-right">$119,366.96</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Australia</td>
-                                                        <td class="text-right">$70,261.65</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>United Kingdom</td>
-                                                        <td class="text-right">$46,399.22</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Turkey</td>
-                                                        <td class="text-right">$35,364.90</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Germany</td>
-                                                        <td class="text-right">$20,366.96</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>France</td>
-                                                        <td class="text-right">$10,366.96</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Australia</td>
-                                                        <td class="text-right">$5,366.96</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Italy</td>
-                                                        <td class="text-right">$1639.32</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="messaging">
-                                <div class="inbox_msg">
-                                  <div class="mesgs">
-                                    <div class="msg_history">
-                                      <div class="incoming_msg">
-                                        <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
-                                        <div class="received_msg">
-                                          <div class="received_withd_msg">
-                                            <p>Test which is a new approach to have all
-                                              solutions</p>
-                                            <span class="time_date"> 11:01 AM    |    June 9</span></div>
-                                        </div>
-                                      </div>
-                                      <div class="outgoing_msg">
-                                        <div class="sent_msg">
-                                          <p>Test which is a new approach to have all
-                                            solutions</p>
-                                          <span class="time_date"> 11:01 AM    |    June 9</span> </div>
-                                      </div>
-                                      <div class="incoming_msg">
-                                        <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
-                                        <div class="received_msg">
-                                          <div class="received_withd_msg">
-                                            <p>Test, which is a new approach to have</p>
-                                            <span class="time_date"> 11:01 AM    |    Yesterday</span></div>
-                                        </div>
-                                      </div>
-                                      <div class="outgoing_msg">
-                                        <div class="sent_msg">
-                                          <p>Apollo University, Delhi, India Test</p>
-                                          <span class="time_date"> 11:01 AM    |    Today</span> </div>
-                                      </div>
-                                      <div class="incoming_msg">
-                                        <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
-                                        <div class="received_msg">
-                                          <div class="received_withd_msg">
-                                            <p>We work directly with our designers and suppliers,
-                                              and sell direct to you, which means quality, exclusive
-                                              products, at a price anyone can afford.</p>
-                                            <span class="time_date"> 11:01 AM    |    Today</span></div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="type_msg">
-                                      <div class="input_msg_write">
-                                        <input type="text" class="write_msg" placeholder="Type a message" />
-                                        <button class="msg_send_btn" type="button"><i class="fas fa-paper-plane" aria-hidden="true"></i></button>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
                         </div>
                     </div>
                 </div>
