@@ -117,12 +117,16 @@ var firebaseConfig = {
         let jadavalue = document.getElementById('JA-DA').value
         if(jdfdValue == 'on'){
           jdfdValue = true
+
+          candidateSelected = 'John Doe and Fohn Doe - Gryffindor'
         }
         if(ogokValue == 'on'){
           ogokValue = true
+          candidateSelected = 'O.G. Money and O.K. Pay - Ravenclaw'
         }
         if(jadavalue == 'on'){
           jadavalue = true
+          candidateSelected = 'Johnny Appleseed and Dohnny Appleseed - Slytherin'
         }
         console.log(jdfdValue)
         console.log(ogokValue)
@@ -130,7 +134,7 @@ var firebaseConfig = {
         db.collection("ballots").add({
           name: `${registeredVoters[0].first_name}`+ ' ' + `${registeredVoters[0].middle_name}` + ' '+ `${registeredVoters[0].last_name}`,
           uid: `${auth.currentUser.uid}`,
-          candidateVotedFor: ``
+          candidateVotedFor: `${candidateSelected}`
         })
         .then(function() {
             console.log("Document successfully written!");
