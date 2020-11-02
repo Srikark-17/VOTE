@@ -112,11 +112,16 @@ var firebaseConfig = {
         checked = true
       }
       function postVoterBallot(){
-        let value = document.getElementById('JD-FD').value
+        let jdfdValue = document.getElementById('JD-FD').value
+        let ogokValue = document.getElementById('OG-OK').value
+        let jadavalue = document.getElementById('JA-DA').value
+        console.log(jdfdValue)
+        console.log(ogokValue)
+        console.log(jadavalue)
         db.collection("ballots").add({
-          name: `${registeredVoters[0].first_name}`+ '' + `${registeredVoters[0].middle_name}` + ''+ `${registeredVoters[0].last_name}`,
-          candidateVotedFor: "CA",
-          country: "USA"
+          name: `${registeredVoters[0].first_name}`+ ' ' + `${registeredVoters[0].middle_name}` + ' '+ `${registeredVoters[0].last_name}`,
+          uid: `${auth.currentUser.uid}`,
+          candidateVotedFor: ``
         })
         .then(function() {
             console.log("Document successfully written!");
@@ -130,14 +135,22 @@ var firebaseConfig = {
       function signIn() {
         var email = document.getElementById("email");
         var password = document.getElementById("password");
-    
+        var firstName = document.getElementById("firstname")
+        var lastName = document.getElementById("lastname")
         const promise = auth.signInWithEmailAndPassword(email.value, password.value);
         promise.catch(e => alert(e.message));
     
         firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
                 console.log('signed in')
-                window.open("dashboard.html")
+                user.updateProfile({
+                  displayName: `${firstName}` + ' ' + `${lastName}`,
+                }).then(function() {
+                  console.log('update successful')
+                }).catch(function(error) {
+                  alert(error)
+                });
+                window.location = ("dashboard.html")
             } else {
               console.log('sign out')
             }
